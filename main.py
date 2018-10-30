@@ -1,15 +1,24 @@
 from db.database import database
 from config.config import config
+from db.models.RawDataModel import RawDataModel
 
 
 def main():
     cfg = config()
     db = database(cfg.read('database'))
-    data = db.execute_query("SELECT * FROM raw_data")
+    data, error = db.get_all("raw_data")
+
+    if error is not None:
+        print(error)
+        exit(0)
 
     for row in data:
-        print(row.id)
+        raw_data = RawDataModel()
+        raw_data.apply(row)
+
+        print(raw_data)
 
 
 if __name__ == "__main__":
     main()
+

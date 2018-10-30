@@ -1,3 +1,5 @@
+from string import Template
+
 from cassandra.cluster import Cluster
 
 
@@ -9,12 +11,27 @@ class database:
 
         try:
             self.session.set_keyspace(self.keyspace)
-        except:
+        except Exception:
+            print("Keyspace does not exist. Creatng new one.")
             self.initialize()
 
-
     def execute_query(self, query):
-        return self.session.execute(query)
+        try:
+            result = self.session.execute(query)
+            error = None
+
+            return result, error
+        except EnvironmentError:
+            result = None
+            error = "Query to cassandra DB failed"
+
+            return result, error
+
+    def get_all(self, table_name):
+        query_template = Template("SELECT * FROM $table_name;")
+        query = query_template.substitute(table_name=table_name)
+
+        return self.execute_query(query)
 
     def initialize(self):
         self.session.execute("""

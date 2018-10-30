@@ -1,13 +1,11 @@
-from db.models.CassandraBaseModel import CassandraBaseModel
+class RawDataModel:
+    def __init__(self):
+        self.id = None
+        self.kpi_name = None
+        self.date = None
+        self.value = None
+        self.table_name = 'raw_data'
 
-
-class RawDataModel(CassandraBaseModel):
-    def __init__(self, cassandra_object):
-        self.model = dict(
-            Id=None,
-            KpiName=None,
-            Date=None,
-            Value=0
-        )
-
-        CassandraBaseModel.__init__(self, cassandra_object)
+    def apply(self, cassandra_object):
+        self.id = cassandra_object.id
+        self.value = cassandra_object.value
