@@ -1,14 +1,22 @@
+import re
 from datetime import datetime, timedelta
 from processing.anonymize.DataFilter import filter_complex_kpis, filter_not_matched_data
 from processing.anonymize.DataReparser import kpi_definitions_map
 from numpy import array_split
+import matplotlib.pyplot as plt
+
 
 def anonymize_data(db, logger):
     kpis = process_raw_kpis(db ,logger)
     kpi_names = get_names(kpis)
-
     raw_data = process_raw_data(db, logger, kpi_names)
-    print(len(raw_data))
+
+    dates = list(map(lambda row: row.date, raw_data))
+    values = list(map(lambda row: row.value, raw_data))
+
+    plt.figure(num=None, figsize=(24, 10), dpi=300, facecolor='w', edgecolor='k')
+    plt.plot(dates, values)
+    plt.show()
 
 
 def process_raw_kpis(db, logger):
@@ -30,7 +38,7 @@ def process_raw_kpis(db, logger):
 
 
 def process_raw_data(db, logger, kpi_names):
-    dates = generate_days(datetime(2014, 1, 1, 0, 0, 0), datetime.now())
+    dates = generate_days(datetime(2018, 1, 1, 0, 0, 0), datetime.now())
     mapped_raw_data = []
 
     for chunk_dates in dates:
@@ -45,11 +53,11 @@ def process_raw_data(db, logger, kpi_names):
 
 
     # Insert into DB
-
-    return mapped_raw_data
+    return list(filter(lambda row: row is not None, mapped_raw_data))
 
 
 def generate_days(start_date, end_date):
+
     days = []
 
     delta = end_date - start_date  # timedelta
@@ -63,7 +71,9 @@ def generate_days(start_date, end_date):
 
 def get_names(kpis):
     kpi_names = []
+
     for kpi in kpis:
-        kpi_names.append(kpi['formula'])
+        kpi_name = re.search('\[(.*)\]', kpi['formula'])
+        kpi_names.append(kpi_name.group(1))
 
     return kpi_names
