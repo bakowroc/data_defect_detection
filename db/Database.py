@@ -15,6 +15,7 @@ class Database:
             print("Keyspace does not exist. Creatng new one.")
             self.initialize()
 
+
     def execute_query(self, query):
         try:
             result = self.session.execute(query)
@@ -27,11 +28,13 @@ class Database:
 
             return result, error
 
+
     def get_all(self, table_name):
         query_template = Template("SELECT * FROM $table_name;")
         query = query_template.substitute(table_name=table_name)
 
         return self.execute_query(query)
+
 
     def get_by_fields(self, table_name, fields):
         query_template = Template("SELECT $fields FROM $table_name;")
@@ -39,6 +42,18 @@ class Database:
         query = query_template.substitute(fields=fields_string, table_name=table_name)
 
         return self.execute_query(query)
+
+
+    def get_by_dates(self, table_name, dates):
+        query_template = Template("SELECT * FROM $table_name WHERE date IN($dates);")
+        dates_string = "'" + "','".join(dates) + "'"
+        print(dates)
+        print(dates_string)
+        query = query_template.substitute(table_name=table_name, dates=dates_string)
+        print(query)
+
+        return self.execute_query(query)
+
 
     def initialize(self):
         self.session.execute("""
