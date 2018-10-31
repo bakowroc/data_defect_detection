@@ -12,7 +12,7 @@ class Database:
         try:
             self.session.set_keyspace(self.keyspace)
         except Exception:
-            print("Keyspace does not exist. Creatng new one.")
+            print("Keyspace does not exist. Creating new one.")
             self.initialize()
 
 
@@ -45,12 +45,9 @@ class Database:
 
 
     def get_by_dates(self, table_name, dates):
-        query_template = Template("SELECT * FROM $table_name WHERE date IN($dates);")
+        query_template = Template("SELECT * FROM $table_name WHERE date IN($dates) ALLOW FILTERING;")
         dates_string = "'" + "','".join(dates) + "'"
-        print(dates)
-        print(dates_string)
         query = query_template.substitute(table_name=table_name, dates=dates_string)
-        print(query)
 
         return self.execute_query(query)
 

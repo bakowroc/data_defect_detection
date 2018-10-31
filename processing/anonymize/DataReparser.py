@@ -1,3 +1,6 @@
+import re
+
+
 def raw_data_map(raw_data):
     return {
         "operator_id": raw_data.cord_id,

@@ -18,8 +18,9 @@ def process_raw_kpis(db, logger):
     filtered_kpis = filter_complex_kpis(raw_kpis)
     parsed_kpis = []
 
-    for kpi in parsed_kpis:
-        parsed_kpis.append(kpi_definitions_map(kpi))
+    for kpi in filtered_kpis:
+        mapped_kpi = kpi_definitions_map(kpi)
+        parsed_kpis.append(mapped_kpi)
 
     mapped_kpis = parsed_kpis
 
@@ -34,7 +35,8 @@ def process_raw_data(db, logger, kpi_names):
 
     for chunk_dates in dates:
         raw_data, error = db.get_by_dates('raw_data', chunk_dates)
-        if error: logger.error(error)
+        if error:
+            logger.error(error)
 
         for row in raw_data:
             filtered_row = filter_not_matched_data(row, kpi_names)
@@ -56,12 +58,12 @@ def generate_days(start_date, end_date):
         day = start_date + timedelta(i)
         days.append(str(day))
 
-    return array_split(days, 10)
+    return array_split(days, len(days) / 30)
 
 
 def get_names(kpis):
     kpi_names = []
     for kpi in kpis:
-        kpi_names.append(kpi.formula)
+        kpi_names.append(kpi['formula'])
 
     return kpi_names
