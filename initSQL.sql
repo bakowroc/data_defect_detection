@@ -42,3 +42,12 @@ CREATE TABLE raw_data(
 );
 
 COPY raw_data(kpi_basename, date, cord_id, acronym, kpi_name, kpi_version, to_be_deleted, value) FROM 'plmn.csv';
+
+CREATE TABLE value_data(
+  operator_id BIGINT,
+  acronym TEXT,
+  kpi_name TEXT,
+  date TIMESTAMP,
+  value DOUBLE,
+  PRIMARY KEY(operator_id, acronym, date, kpi_name)
+);
