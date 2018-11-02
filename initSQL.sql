@@ -1,6 +1,6 @@
 CREATE TABLE kpi_defs(
     parition_key text,
-    definition_id double PRIMARY KEY,,
+    definition_id bigint PRIMARY KEY,,
     calculator_class text,
     weight double,
     formula text,
@@ -49,5 +49,21 @@ CREATE TABLE value_data(
   kpi_name TEXT,
   date TIMESTAMP,
   value DOUBLE,
-  PRIMARY KEY(operator_id, acronym, date, kpi_name)
+  PRIMARY KEY(kpi_name, date)
+);
+
+CREATE TABLE kpi_definitions(
+    definition_id bigint,
+    formula text,
+    date timestamp,
+    tags text,
+    technology text,
+    unit text,
+    PRIMARY KEY(definition_id, date)
+);
+
+CREATE TABLE operator_to_acronym(
+  operator_id BIGINT,
+  acronym TEXT,
+  PRIMARY KEY(operator_id)
 );
