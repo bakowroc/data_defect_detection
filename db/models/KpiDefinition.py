@@ -1,6 +1,7 @@
 from string import Template
 from cassandra.cqltypes import DateType
 
+
 class KpiDefinition:
     def __init__(self, definition_id = None, formula = None, date = None, tags = None, technology = None, unit = None, cassandra_row = None):
         if cassandra_row is None:
