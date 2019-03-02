@@ -1,7 +1,7 @@
 from figgypy import Config, set_config, get_value
 
 
-class config:
+class APPConfig:
     def __init__(self):
         self.config = Config(config_file='config.yaml')
         set_config(self.config)

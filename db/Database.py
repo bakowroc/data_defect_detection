@@ -1,61 +1,47 @@
-from string import Template
-
+from cassandra.cqlengine import connection
+from cassandra.cqlengine.management import sync_table
 from cassandra.cluster import Cluster
+from db.models.RawKpiDefinition import RawKpiDefinition
+from db.models.KpiDefinition import KpiDefinition
+from db.models.RawDataPoint import RawDataPoint
+from db.models.DataPoint import DataPoint
+from db.models.DataSetMap import DataSetMap
+from db.models.AcronymNameMap import AcronymNameMap
+from db.models.Operator import Operator
 
 
 class Database:
     def __init__(self, database_config):
+        connection.setup(['127.0.0.1'], "cqlengine", protocol_version=3)
+        self.sync()
+
         self.keyspace = database_config['keyspace']
         self.cluster = Cluster()
-        self.session = self.cluster.connect()
+
+    @staticmethod
+    def sync():
+        sync_table(RawKpiDefinition)
+        sync_table(KpiDefinition)
+        sync_table(RawDataPoint)
+        sync_table(DataPoint)
+        sync_table(DataSetMap)
+        sync_table(AcronymNameMap)
+        sync_table(Operator)
+
+    def query(self, query):
+        session = self.cluster.connect()
+        session.set_keyspace(self.keyspace)
 
         try:
-            self.session.set_keyspace(self.keyspace)
-        except Exception:
-            print("Keyspace does not exist. Creating new one.")
-            self.initialize()
-
-
-    def execute_query(self, query):
-        try:
-            result = self.session.execute(query)
+            result = session.execute(query)
             error = None
 
+            session.shutdown()
             return result, error
         except EnvironmentError:
             result = None
             error = "Query to cassandra DB failed"
 
+            session.shutdown()
             return result, error
 
-
-    def get_all(self, table_name):
-        query_template = Template("SELECT * FROM $table_name;")
-        query = query_template.substitute(table_name=table_name)
-
-        return self.execute_query(query)
-
-
-    def get_by_fields(self, table_name, fields):
-        query_template = Template("SELECT $fields FROM $table_name;")
-        fields_string = ','.join(fields)
-        query = query_template.substitute(fields=fields_string, table_name=table_name)
-
-        return self.execute_query(query)
-
-
-    def get_by_dates(self, table_name, dates):
-        query_template = Template("SELECT * FROM $table_name WHERE date IN($dates) ALLOW FILTERING;")
-        dates_string = "'" + "','".join(dates) + "'"
-        query = query_template.substitute(table_name=table_name, dates=dates_string)
-
-        return self.execute_query(query)
-
-
-    def initialize(self):
-        self.session.execute("""
-            CREATE KEYSPACE %s
-            WITH replication = { 'class': 'SimpleStrategy', 'replication_factor': '2' }
-            """ % self.keyspace)
-
-        self.session.set_keyspace(self.keyspace)

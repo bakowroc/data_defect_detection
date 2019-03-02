@@ -4,24 +4,21 @@ import unicodedata
 
 class NameMapper:
     def __init__(self):
-        self.acronym_map = {}
+        self.value_map = {}
 
-
-    def map_acronym(self, acronym):
-        if acronym in self.acronym_map:
-            return self.acronym_map[acronym]
+    def map_value(self, value):
+        if value in self.value_map:
+            return self.value_map[value]
 
         name = self.get_name_value()
-        self.acronym_map[acronym] = name
-        return name
-
+        self.value_map[value] = name
 
     def get_name_value(self):
-        with open('cities.csv', 'r', encoding='utf8') as f:
+        with open('./fixtures/cities.csv', 'r', encoding='utf8') as f:
             reader = csv.reader(f)
             names = list(reader)
 
-        reserved_names = list(self.acronym_map.values())
+        reserved_names = list(self.value_map.values())
 
         for name in names:
             parsed_name = NameMapper.strip_accents(name[0]).upper().replace(' ', '_').replace('\'', '')
@@ -29,7 +26,6 @@ class NameMapper:
                 return parsed_name
 
         return None
-
 
     @staticmethod
     def strip_accents(text):
