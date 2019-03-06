@@ -1,6 +1,5 @@
 import json
 import falcon
-import time_uuid
 
 from db.models.Operator import Operator
 
@@ -14,7 +13,7 @@ class OperatorRoute(object):
         for operator_row in result:
             body.append({
                 'operator_id': operator_row.operator_id,
-                'operator_name': "LOREM"
+                'operator_name': "OPERATOR"
             })
 
         resp.body = json.dumps(body, ensure_ascii=False)

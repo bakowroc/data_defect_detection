@@ -13,6 +13,9 @@ click = "*"
 time-uuid = "*"
 falcon = "*"
 gunicorn = "*"
+scikit-learn = "*"
+pandas = "*"
+learn-utils = "*"
 
 [requires]
 python_version = "3.6"

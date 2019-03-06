@@ -5,7 +5,9 @@ from api.routes.dataset_route import DatasetRoute
 import falcon
 import multiprocessing
 
+from api.routes.kpi_definition_route import KpiDefinitionRoute
 from api.routes.operator_route import OperatorRoute
+from api.routes.outlier_route import OutlierRoute
 from config.APPConfig import APPConfig
 from db.Database import Database
 
@@ -17,6 +19,11 @@ api = application = falcon.API()
 api.add_route('/dataset_keys', DatasetKeyRoute())
 api.add_route('/datasets', DatasetRoute())
 api.add_route('/operators', OperatorRoute())
+api.add_route('/kpi_definitions', KpiDefinitionRoute())
+api.add_route('/outliers', OutlierRoute())
+
+
+# TODO Database connection freezes when using code below via cli
 
 
 def number_of_workers():

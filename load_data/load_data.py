@@ -1,8 +1,6 @@
 from db.models.AcronymNameMap import AcronymNameMap
 from db.models.DataPoint import DataPoint
-from db.models.DataSetMap import DataSetMap
 from db.models.KpiDefinition import KpiDefinition
-from db.models.Operator import Operator
 from db.models.RawDataPoint import RawDataPoint
 from db.models.RawKpiDefinition import RawKpiDefinition
 
@@ -13,7 +11,6 @@ from utils.kpis import filter_complex_kpis
 def load_data():
     load_kpi_definitions()
     load_data_points()
-    load_operators()
 
 
 def load_kpi_definitions(skip_if_exists=True):
@@ -63,16 +60,3 @@ def load_data_points(skip_if_exists=True):
 
     RawDataPoint.run_per_each(func)
 
-
-def load_operators(skip_if_exists=True):
-    print("Loading operators")
-    if len(DataSetMap.objects.limit(1)) is 0:
-        raise ResourceWarning("collection data_set_map is empty")
-
-    if len(Operator.objects.limit(1)) is not 0 and skip_if_exists:
-        print("Skipping due to skip_if_exists: True")
-        return
-
-    result = DataSetMap.objects.only(['operator_id']).distinct()
-    for data_set_map in result:
-        Operator.create(operator_id=data_set_map.operator_id)
