@@ -2,45 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66852614-159d-4e5f-935f-73f2ec68125e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/api/routes/kpi_definition_route.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/routes/outlier_route.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/load_data/load_operators.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outlier_detector/OutlierDetector.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outlier_detector/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outlier_detector/featured_kmean.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outlier_detector/learn_utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outlier_detector/sliding_window_kmean.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/src/components/App/App.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/src/components/App/style.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/src/components/Chart/style.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/src/components/Select/Select.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/src/components/Select/style.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/src/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/src/types/DatasetMapRow.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/src/types/DatasetRow.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/src/types/KpiDefinition.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/src/types/Operator.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/webpack.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/outlier_detector/dist_kmean.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/outlier_detector/linear_regression.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/outlier_detector/sim_kmean.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/src/typings/react-vis.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pipfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/routes/dataset_route.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/dataset_route.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/routes/operator_route.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/operator_route.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/routes/outlier_route.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/outlier_route.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cli/cli.py" beforeDir="false" afterPath="$PROJECT_DIR$/cli/cli.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/create_data_set_map/create_data_set_map.py" beforeDir="false" afterPath="$PROJECT_DIR$/create_data_set_map/create_data_set_map.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/models/DataPoint.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/models/DataPoint.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/load_data/load_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/load_data/load_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/date.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/date.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/outlier_detector/OutlierDetector.py" beforeDir="false" afterPath="$PROJECT_DIR$/outlier_detector/OutlierDetector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/outlier_detector/featured_kmean.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/ui/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/src/components/App/style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui/src/components/App/style.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/src/components/Chart/Chart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/ui/src/components/Chart/Chart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/src/components/Chart/style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui/src/components/Chart/style.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/ui/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/ui/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/yarn-error.log" beforeDir="false" afterPath="$PROJECT_DIR$/ui/yarn-error.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ui/yarn.lock" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -79,56 +58,7 @@
     <fileColor scope="Non-Project Files (Material Palenight)" color="2f2e43" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/outlier_detector/OutlierDetector.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="9" column="25" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="25" />
-              <folding>
-                <element signature="e#0#58#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/api/routes/outlier_route.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
-              <caret line="27" column="121" selection-start-line="27" selection-start-column="121" selection-end-line="27" selection-end-column="121" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/outlier_detector/featured_kmean.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="124" column="10" selection-start-line="124" selection-start-column="10" selection-end-line="124" selection-end-column="10" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ui/src/components/Chart/Chart.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="22" column="7" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
-              <folding>
-                <element signature="e#0#30#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -158,6 +88,7 @@
       <find>n_samp</find>
       <find>1545</find>
       <find>print</find>
+      <find>XYP</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/ui</dir>
@@ -169,11 +100,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/api/routes/__init__.py" />
-        <option value="$PROJECT_DIR$/api/routes/data_set_map.py" />
-        <option value="$PROJECT_DIR$/db/models/RawDataPoint.py" />
-        <option value="$PROJECT_DIR$/api/server.py" />
-        <option value="$PROJECT_DIR$/api/app.py" />
         <option value="$PROJECT_DIR$/api/routes/data_set.py" />
         <option value="$PROJECT_DIR$/api/routes/data_set_key.py" />
         <option value="$PROJECT_DIR$/api/routes/dataset.py" />
@@ -188,45 +114,51 @@
         <option value="$PROJECT_DIR$/ui/src/types/DataSet.ts" />
         <option value="$PROJECT_DIR$/ui/dist/index.html" />
         <option value="$PROJECT_DIR$/ui/src/types/Operator.ts" />
-        <option value="$PROJECT_DIR$/ui/tsconfig.json" />
         <option value="$PROJECT_DIR$/ui/src/types/DatasetMapRow.ts" />
         <option value="$PROJECT_DIR$/ui/src/components/Select/style.ts" />
         <option value="$PROJECT_DIR$/ui/package.json" />
-        <option value="$PROJECT_DIR$/ui/src/components/Chart/style.ts" />
         <option value="$PROJECT_DIR$/api/routes/kpi_definitions_route.py" />
         <option value="$PROJECT_DIR$/ui/src/types/KpiDefinition.ts" />
         <option value="$PROJECT_DIR$/ui/src/components/Select/Select.tsx" />
         <option value="$PROJECT_DIR$/ui/src/index.tsx" />
-        <option value="$PROJECT_DIR$/ui/src/components/App/style.ts" />
         <option value="$PROJECT_DIR$/ui/index.html" />
         <option value="$PROJECT_DIR$/ui/src/components/Chart/dads.html" />
         <option value="$PROJECT_DIR$/api/routes/kpi_definition_route.py" />
         <option value="$PROJECT_DIR$/api/api.py" />
         <option value="$PROJECT_DIR$/ui/src/types/DatasetRow.ts" />
-        <option value="$PROJECT_DIR$/ui/src/components/App/App.tsx" />
-        <option value="$PROJECT_DIR$/ui/webpack.config.js" />
         <option value="$PROJECT_DIR$/api/routes/dataset_route.py" />
         <option value="$PROJECT_DIR$/load_data/load_data.py" />
         <option value="$PROJECT_DIR$/outlier_detector/learn_utils.py" />
         <option value="$PROJECT_DIR$/outlier_detector/sliding_window_kmean.py" />
-        <option value="$PROJECT_DIR$/cli/cli.py" />
         <option value="$PROJECT_DIR$/load_data/load_operators.py" />
         <option value="$PROJECT_DIR$/api/routes/operator_route.py" />
         <option value="$PROJECT_DIR$/fixtures/initSQL.sql" />
         <option value="$PROJECT_DIR$/create_data_set_map/create_data_set_map.py" />
         <option value="$PROJECT_DIR$/utils/date.py" />
         <option value="$PROJECT_DIR$/db/models/DataPoint.py" />
-        <option value="$PROJECT_DIR$/outlier_detector/OutlierDetector.py" />
+        <option value="$PROJECT_DIR$/ui/webpack.config.js" />
+        <option value="$PROJECT_DIR$/ui/src/typings/react-vis.d.ts" />
+        <option value="$PROJECT_DIR$/ui/tsconfig.json" />
+        <option value="$PROJECT_DIR$/ui/src/components/Chart/style.ts" />
+        <option value="$PROJECT_DIR$/ui/src/components/App/style.ts" />
+        <option value="$PROJECT_DIR$/cli/cli.py" />
         <option value="$PROJECT_DIR$/ui/src/components/Chart/Chart.tsx" />
         <option value="$PROJECT_DIR$/outlier_detector/featured_kmean.py" />
+        <option value="$PROJECT_DIR$/outlier_detector/utils.py" />
+        <option value="$PROJECT_DIR$/outlier_detector/sim_kmean.py" />
+        <option value="$PROJECT_DIR$/outlier_detector/dist_kmean.py" />
+        <option value="$PROJECT_DIR$/ui/src/components/App/App.tsx" />
+        <option value="$PROJECT_DIR$/outlier_detector/linear_regression.py" />
         <option value="$PROJECT_DIR$/api/routes/outlier_route.py" />
+        <option value="$PROJECT_DIR$/outlier_detector/OutlierDetector.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1920" />
-    <option name="width" value="1920" />
-    <option name="height" value="1080" />
+    <option name="x" value="1885" />
+    <option name="y" value="27" />
+    <option name="width" value="1910" />
+    <option name="height" value="810" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -237,8 +169,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -265,16 +195,6 @@
             <path>
               <item name="data_defect_detection" type="b2602c69:ProjectViewProjectNode" />
               <item name="data_defect_detection" type="462c0819:PsiDirectoryNode" />
-              <item name="create_data_set_map" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="data_defect_detection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="data_defect_detection" type="462c0819:PsiDirectoryNode" />
-              <item name="outlier_detector" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="data_defect_detection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="data_defect_detection" type="462c0819:PsiDirectoryNode" />
               <item name="ui" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -289,6 +209,14 @@
               <item name="ui" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="data_defect_detection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="data_defect_detection" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="App" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="data_defect_detection" type="b2602c69:ProjectViewProjectNode" />
@@ -301,23 +229,83 @@
             <path>
               <item name="data_defect_detection" type="b2602c69:ProjectViewProjectNode" />
               <item name="data_defect_detection" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="typings" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="data_defect_detection" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
+            <path>
+              <item name="data_defect_detection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Pipenv (data_defect_detection) &gt;" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="data_defect_detection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Pipenv (data_defect_detection) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="python3.6" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="data_defect_detection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Pipenv (data_defect_detection) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="python3.6" type="462c0819:PsiDirectoryNode" />
+              <item name="site-packages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="data_defect_detection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Pipenv (data_defect_detection) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="python3.6" type="462c0819:PsiDirectoryNode" />
+              <item name="site-packages" type="462c0819:PsiDirectoryNode" />
+              <item name="sklearn" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="data_defect_detection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Pipenv (data_defect_detection) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="python3.6" type="462c0819:PsiDirectoryNode" />
+              <item name="site-packages" type="462c0819:PsiDirectoryNode" />
+              <item name="sklearn" type="462c0819:PsiDirectoryNode" />
+              <item name="cluster" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="data_defect_detection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Pipenv (data_defect_detection) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="site-packages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="data_defect_detection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Pipenv (data_defect_detection) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="site-packages" type="462c0819:PsiDirectoryNode" />
+              <item name="sklearn" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="data_defect_detection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Pipenv (data_defect_detection) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="site-packages" type="462c0819:PsiDirectoryNode" />
+              <item name="sklearn" type="462c0819:PsiDirectoryNode" />
+              <item name="cluster" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551896268268" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552417656745" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/maile PIT APP_PODATNIK (1).html" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="/usr/bin/node" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -329,18 +317,18 @@
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/ui/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/ui" />
-      <recent name="$PROJECT_DIR$/api/routes" />
-      <recent name="$PROJECT_DIR$/db/models" />
-      <recent name="$PROJECT_DIR$/anonymize/NameMapper" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/ui/dist" />
       <recent name="$PROJECT_DIR$/ui/src" />
       <recent name="$PROJECT_DIR$/ui/src/components" />
       <recent name="$PROJECT_DIR$/create_data_set_map" />
       <recent name="$PROJECT_DIR$/create_name_map" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ui" />
+      <recent name="$PROJECT_DIR$/api/routes" />
+      <recent name="$PROJECT_DIR$/db/models" />
+      <recent name="$PROJECT_DIR$/anonymize/NameMapper" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -519,18 +507,18 @@
       <workItem from="1551609491276" duration="17031000" />
       <workItem from="1551639606687" duration="1894000" />
       <workItem from="1551647626316" duration="191000" />
-      <workItem from="1551684160906" duration="53781000" />
+      <workItem from="1551684160906" duration="54467000" />
+      <workItem from="1552389463075" duration="27254000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="129933000" />
+    <option name="totallyTimeSpent" value="157873000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="27" width="1920" height="1016" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2275641" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23023504" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -547,7 +535,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32951945" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49893162" weight="0.2723112" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49893162" weight="0.29176202" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50106835" side_tool="true" weight="0.298627" />
       <window_info anchor="bottom" id="TypeScript" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -567,51 +555,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ui/src/types/Operator.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@types/recharts/index.d.ts" />
-    <entry file="file://$PROJECT_DIR$/node_modules/@types/recharts/package.json" />
-    <entry file="file://$PROJECT_DIR$/ui/tsconfig.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fixtures/cities.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-334049" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/create_acronym_map/NameMapper/NameMapper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-104">
-          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/src/components/Chart/style.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="2" column="18" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/src/components/Select/style.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="6" column="19" selection-end-line="9" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/models/KpiDefinition.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -657,13 +600,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ui/src/components/App/style.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="650">
-          <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ui/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -697,13 +633,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ui/src/components/Chart/dads.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="3" column="37" lean-forward="true" selection-end-line="462" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/src/components/Chart/dads.html" />
     <entry file="file://$PROJECT_DIR$/api/routes/kpi_definition_route.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="338">
@@ -721,13 +651,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.local/share/virtualenvs/data_defect_detection-I3J651vf/lib/python3.6/site-packages/sklearn/cluster/k_means_.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1840">
-          <caret line="950" column="55" lean-forward="true" selection-start-line="950" selection-start-column="55" selection-end-line="950" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.local/lib/python2.7/site-packages/pipenv/patched/piptools/repositories/pypi.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="588">
@@ -742,20 +665,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ui/webpack.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="24" column="46" selection-start-line="24" selection-start-column="46" selection-end-line="24" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/src/components/App/App.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="40" column="24" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/routes/dataset_route.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="470">
@@ -765,9 +674,6 @@
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/outlier_detector/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/api/api.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -819,23 +725,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1168">
           <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/outlier_detector/learn_utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1040">
-          <caret line="40" column="66" selection-start-line="40" selection-start-column="66" selection-end-line="40" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cli/cli.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="56" column="46" selection-start-line="56" selection-start-column="46" selection-end-line="56" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -913,42 +802,138 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ui/src/components/Chart/Chart.tsx">
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/outlier_detector/learn_utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="22" column="7" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="494">
+          <caret line="40" column="66" selection-start-line="40" selection-start-column="66" selection-end-line="40" selection-end-column="66" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/outlier_detector/OutlierDetector.py">
+    <entry file="file://$PROJECT_DIR$/ui/webpack.config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="9" column="25" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#58#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="600">
+          <caret line="46" column="32" lean-forward="true" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/src/typings/react-vis.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="752">
+          <caret line="3601" column="15" selection-start-line="3601" selection-start-column="15" selection-end-line="3601" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/tsconfig.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/src/components/App/style.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/src/components/Chart/style.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/outlier_detector/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cli/cli.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/outlier_detector/featured_kmean.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="124" column="10" selection-start-line="124" selection-start-column="10" selection-end-line="124" selection-end-column="10" />
+        <state relative-caret-position="312">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/outlier_detector/utils.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/.local/share/virtualenvs/data_defect_detection-I3J651vf/lib/python3.6/site-packages/sklearn/cluster/k_means_.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="914" column="52" selection-start-line="914" selection-start-column="43" selection-end-line="914" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/src/components/Chart/Chart.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-388">
+          <caret line="36" column="70" selection-start-line="36" selection-start-column="70" selection-end-line="36" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/src/components/App/App.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="188" column="37" selection-start-line="188" selection-start-column="37" selection-end-line="188" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/outlier_detector/dist_kmean.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="17" column="62" selection-start-line="17" selection-start-column="62" selection-end-line="17" selection-end-column="62" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/outlier_detector/linear_regression.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="36" column="25" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/outlier_detector/sim_kmean.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api/routes/outlier_route.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="27" column="121" selection-start-line="27" selection-start-column="121" selection-end-line="27" selection-end-column="121" />
+        <state relative-caret-position="548">
+          <caret line="39" column="31" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/outlier_detector/OutlierDetector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>

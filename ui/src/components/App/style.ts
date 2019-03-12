@@ -27,5 +27,21 @@ export const style: {[key: string]: React.CSSProperties} = {
   },
   button: {
     marginLeft: 50
+  },
+  loading: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    position: 'fixed',
+    top: 0,
+    bottom: 0,
+    right: 0,
+    left: 0,
+    zIndex: 1000,
+    background: 'rgba(0,0,0,0.3)'
+  },
+  spinner: {
+    background: 'white',
+    padding: 50
   }
 };

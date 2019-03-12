@@ -29,23 +29,22 @@ var config = {
     },
 
     module: {
-        rules: [{
+        rules: [
+          {
             enforce: 'pre',
             test: /\.tsx?$/,
             use: "source-map-loader",
             exclude: /node_modules/
-        },{
+        }, {
             test: /\.tsx?$/,
             loader: "ts-loader",
             exclude: /node_modules/
-        }],
-        /* 
-         * Define the loaders to be used. Regex will test the type of files on 
-         * which the loader is to be applied. The excluded files are also mentioned.
-         * Loaders are used mainly to transpile the file before bundling.
-         */
+        }, {
+            test: /\.css$/,
+            use: ['style-loader', 'css-loader']
+        }]
     },
-    devtool: 'inline-source-map',
+    devtool: 'inline-source-map'
 };
 
 module.exports = config;

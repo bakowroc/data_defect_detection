@@ -1,75 +1,76 @@
-import {sortBy} from 'lodash';
+import '../../../node_modules/react-vis/dist/style.css';
+import {groupBy} from 'lodash'
 import * as React from 'react';
-import {Area, CartesianGrid, Line, XAxis, YAxis, Tooltip, ComposedChart} from 'recharts';
+import {XYPlot, MarkSeries} from 'react-vis';
 
 import {DatasetRow} from "../../types/DatasetRow";
 import {style} from "./style";
 
-interface CharProps {
+interface ChartProps {
   data: Array<DatasetRow>,
   isCompact: boolean;
 }
 
-export class Chart extends React.Component<CharProps> {
+interface ChartState {
+  showOutlierData: boolean;
+  showOutliers: boolean;
+}
 
-  prepareData = () => sortBy(this.props.data, 'timestamp').map((row: any) => {
-      const date = new Date(row.date);
-      const name = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`;
-      return {
-        name,
-        value: row.value,
-        is_outlier: row.is_outlier,
-        centroid_value: row.centroid_value
-      }
-    });
-
-  renderDot = ({cx, cy, payload}: any) => {
-     let dot = {stroke: '#8884d8', fill: 'white'};
-
-     if(payload.is_outlier) {
-       dot = {stroke: 'red', fill: 'red'};
-     }
-
-    return (
-      <circle
-        key={payload.key}
-        r="3"
-        fill="white"
-        strokeWidth="1"
-        width="1056"
-        height="738.1818181818181"
-        cx={cx}
-        cy={cy}
-        {...dot}
-      >
-      </circle>
-    )
+export class Chart extends React.Component<ChartProps, ChartState> {
+  state = {
+    showOutlierData: false,
+    showOutliers: false,
   };
 
-  renderChart = (data: any) => {
-    const width = window.innerWidth * data.length / 20;
-    const selectedWidth = this.props.isCompact
+  getChartLength = () => {
+    const width = window.innerWidth * this.props.data.length / 20;
+    return this.props.isCompact
       ? window.innerWidth - 20
       : width < window.innerWidth
         ? window.innerWidth
         : width;
+  };
+
+  prepareData = (data, xKey) => data.map((row : any) => ({
+      x: row[xKey],
+      y: row.value,
+      color: this.state.showOutliers ? (row.is_outlier ? 'red' : '#ddd') : row.label,
+      size: 3
+    }));
+
+  renderChart = (data) => {
+    const colorProp = this.state.showOutliers ? {
+      colorType: "literal"
+    } : {
+      colorRange: ['red', 'blue']
+    };
 
     return (
-      <ComposedChart
-        stackOffset="wiggle"
-        style={{fontSize: '11px'}}
-        width={selectedWidth}
-        height={window.innerHeight / 1.1}
-        margin={{top: 90}}
-        data={data}
-      >
-        <Line type="monotone" dataKey="value" stroke="#8884d8" dot={this.renderDot} />
-        <Line type="monotone" dataKey="centroid_value" stroke="red" dot={false} />
-        <CartesianGrid stroke="#ccc" strokeDasharray="5 5"/>
-        <XAxis dataKey="name"/>
-        <YAxis/>
-        <Tooltip/>
-      </ComposedChart>
+      <div style={style.chart}>
+        {this.renderSummary(data)}
+        <XYPlot height={window.innerHeight - 150} width={this.getChartLength() - 300} {...colorProp}>
+          {this.state.showOutlierData
+            ? <MarkSeries data={data} sizeRange={[3, 3]}/>
+            : <MarkSeries data={data} sizeRange={[3, 3]}/>
+          }
+        </XYPlot>
+      </div>
+    );
+  }
+
+  renderSummary = (data) => {
+    const groupedData = groupBy(data, 'color');
+
+    return (
+      <div style={style.summary}>
+        <button onClick={() => this.setState(state => ({showOutliers: !state.showOutliers}))}>Outliers</button>
+        <button onClick={() => this.setState(state => ({showOutlierData: !state.showOutlierData}))}>Features</button>
+        <ul style={{listStyle: 'none'}}>
+          {Object.keys(groupedData)
+            .map(color =>
+              <li> <div style={{...style.colorBlock, background: color}} />{groupedData[color].length}</li>)}
+        </ul>
+      </div>
     )
   };
 
@@ -77,13 +78,15 @@ export class Chart extends React.Component<CharProps> {
     <div style={style.noData}>
       No data found for collection
     </div>
-  )
+  );
 
   render() {
-    const data = this.prepareData();
+    const data = this.prepareData(this.props.data, this.state.showOutlierData ? 'day' : 'timestamp');
+    console.log(data);
+
     return (
       <React.Fragment>
-        {data.length > 0
+        {this.props.data.length > 0
           ? this.renderChart(data)
           : this.renderNoData()
         }

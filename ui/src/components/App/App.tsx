@@ -21,8 +21,11 @@ interface AppState {
     operator: Option;
     acronym: Option;
     kpiName: Option;
+    feature: Option;
+    method: Option;
   },
   isChartCompact: boolean;
+  isCalculating: boolean;
 }
 
 export class App extends React.Component<{}, AppState> {
@@ -36,9 +39,12 @@ export class App extends React.Component<{}, AppState> {
     selected: {
       operator: {key: null, value: null},
       acronym: {key: null, value: null},
-      kpiName: {key: null, value: null}
+      kpiName: {key: null, value: null},
+      feature: {key: null, value: null},
+      method: {key: null, value: null}
     },
-    isChartCompact: true
+    isChartCompact: true,
+    isCalculating: false
   };
 
   static replaceVerticalScrollByHorizontal(event: any) {
@@ -131,10 +137,13 @@ export class App extends React.Component<{}, AppState> {
 
   calculateOutliers = async () => {
     try {
+      this.setState({isCalculating: true});
       const operator_id = this.state.selected.operator.value;
       const acronym = this.state.selected.acronym.value;
       const kpiName = this.state.selected.kpiName.value;
-      const url = `/api/outliers?operator_id=${operator_id}&acronym=${acronym}&kpi_name=${kpiName}`;
+      const feature = this.state.selected.feature.value;
+      const method = this.state.selected.method.value;
+      const url = `/api/outliers?operator_id=${operator_id}&acronym=${acronym}&kpi_name=${kpiName}&method=${method}&feature=${feature}`;
       const response = await axios.get(url);
       const dataWithOutliers = response.data;
 
@@ -142,13 +151,16 @@ export class App extends React.Component<{}, AppState> {
     } catch (e) {
       console.log(e)
     }
-  }
+
+    this.setState({isCalculating: false});
+  };
 
   onCompactChange = () => this.setState(state => ({isChartCompact: !state.isChartCompact}));
 
   render() {
     return (
       <React.Fragment>
+        {this.state.isCalculating && <div style={style.loading}><span style={style.spinner}>Calculating</span></div>}
        <div style={style.selectors}>
          <Select
            data={this.state.operators}
@@ -169,8 +181,42 @@ export class App extends React.Component<{}, AppState> {
            selected={this.state.selected.kpiName}
            disabled={this.state.kpiNames.length === 0}
          />
+
+         <Select
+           data={[
+             {key: 'sim', value: 'sim'},
+             {key: 'dist', value: 'dist'},
+             {key: 'reg', value: 'reg'},
+             ]}
+           onChange={(selected) => this.setState(state => ({
+             selected: {
+               ...state.selected,
+               method: selected
+             }}))}
+           selected={this.state.selected.method}
+           disabled={this.state.kpiNames.length === 0}
+         />
+
+         <Select
+           data={[
+             {key: 'day', value: 'day'},
+             {key: 'weekday', value: 'weekday'},
+             {key: 'monthday', value: 'monthday'},
+             {key: 'timestamp', value: 'timestamp'}
+           ]}
+           onChange={(selected) => this.setState(state => ({
+             selected: {
+               ...state.selected,
+               feature: selected
+           }}))}
+           selected={this.state.selected.feature}
+           disabled={this.state.kpiNames.length === 0}
+         />
+
           <input checked={this.state.isChartCompact} type="checkbox" onChange={this.onCompactChange} />
-         {this.state.kpiNames.length !== 0 && <button onClick={this.calculateOutliers}>Find outliers</button> }
+         {this.state.selected.feature.value !== null
+            && this.state.selected.method.value !== null
+            && <button onClick={this.calculateOutliers}>Find outliers</button> }
 
          {this.state.kpiDefinition.id > 0 &&
          <div style={style.definition}>
