@@ -3,7 +3,6 @@ from datetime import datetime
 from outlier_detector.dist_kmean import dist_kmean
 from outlier_detector.linear_regression import linear_regression
 from outlier_detector.sim_kmean import sim_kmean
-from outlier_detector.sliding_window_kmean import sliding_window_kmean
 import numpy as np
 
 
@@ -12,9 +11,9 @@ class OutlierDetector:
         self.dataset = dataset
         self.dataset_with_day = self.get_dataset_with_day_feature(feature)
         self.kmean_clusters = {
-            'weekday': 50,
-            'monthday': 50,
-            'day': 50,
+            'weekday': 7,
+            'monthday': 12,
+            'day': 31,
             'timestamp': 50
         }[feature]
 
@@ -47,11 +46,11 @@ class OutlierDetector:
         return self.run_calculations(outlier_detect_method)
 
     def regression_line(self):
-        outlier_detect_method = lambda: linear_regression(self.dataset_with_day)
-        return self.run_calculations(outlier_detect_method)
+        return linear_regression(self.dataset_with_day)
 
-    def run_calculations(self, method):
-        iterations = int(len(self.dataset) / 4)
+    @staticmethod
+    def run_calculations(method):
+        iterations = 10
         labeled_result = []
         outliers_prob = {}
 
@@ -82,7 +81,3 @@ class OutlierDetector:
             })
 
         return final_result
-
-    def knn_mean_sliding(self, n_clusters):
-        dataset = np.array(list(map(lambda data: data['value'], self.dataset)))
-        return sliding_window_kmean(dataset, n_clusters)

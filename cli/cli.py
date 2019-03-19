@@ -2,6 +2,7 @@ import click
 
 from api.api import server
 from config.APPConfig import APPConfig
+from count_dataset.count_dataset import count_dataset
 from create_acronym_map.create_acronym_map import create_acronym_map
 from create_data_set_map.create_data_set_map import create_data_set_map
 from db.Database import Database
@@ -33,6 +34,11 @@ def __load_data():
 @cli.command('load_operators')
 def __load_operators():
     load_operators()
+
+
+@cli.command('count_dataset')
+def __count_dataset():
+    count_dataset()
 
 
 @cli.command('server')

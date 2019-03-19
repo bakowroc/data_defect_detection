@@ -110,6 +110,7 @@ declare module "react-vis" {
 
   export class LineMarkSeries extends React.Component<PropsLineMarkSeries> {
 
+
   }
 
   export class LineMarkSeriesCanvas extends React.Component<PropsLineMarkSeriesCanvas> {
@@ -1637,6 +1638,8 @@ declare module "react-vis" {
   };
 
   export type PropsLineMarkSeries = {
+
+    strokeWidth?: any;
 
     className?: string;
 

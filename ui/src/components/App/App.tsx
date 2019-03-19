@@ -90,7 +90,7 @@ export class App extends React.Component<{}, AppState> {
       }}), async () => {
       try {
         const response = await axios.get(`/api/dataset_keys?operator_id=${this.state.selected.operator.value}`);
-        const dataset_keys: Array<DatasetMapRow> = response.data;
+        const dataset_keys: Array<DatasetMapRow> = response.data.filter(dsk => dsk.has_enough === true);
         const acronyms: Array<Option> = this.prepareOptions(uniq(dataset_keys.map(dataset => dataset.acronym)));
 
         this.setState(state => ({ ...state, dataset_keys, acronyms}))

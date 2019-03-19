@@ -21,7 +21,6 @@ class DatasetRoute(object):
                     'value': data_point.value,
                     'date': str(time_uuid.TimeUUID.convert(data_point.date).get_datetime()),
                     'timestamp': time_uuid.TimeUUID.convert(data_point.date).get_timestamp(),
-                    'cluster': -1
                 })
 
             resp.body = json.dumps(body, ensure_ascii=False)

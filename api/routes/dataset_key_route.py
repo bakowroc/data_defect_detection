@@ -15,7 +15,8 @@ class DatasetKeyRoute(object):
                 body.append({
                     'operator_id': data_set_map.operator_id,
                     'acronym': data_set_map.acronym,
-                    'kpi_name': data_set_map.kpi_name
+                    'kpi_name': data_set_map.kpi_name,
+                    'has_enough': data_set_map.has_enough
                 })
 
             resp.body = json.dumps(body, ensure_ascii=False)

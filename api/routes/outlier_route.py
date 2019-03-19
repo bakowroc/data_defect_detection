@@ -31,7 +31,7 @@ class OutlierRoute(object):
 
             final_result = []
             if method == 'sim':
-                final_result = detector.knn_mean_sim()
+                final_result = detector.knn_mean_sim(similarity=3)
 
             if method == 'dist':
                 final_result = detector.knn_mean_dist()
