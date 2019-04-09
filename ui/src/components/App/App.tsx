@@ -61,7 +61,7 @@ export class App extends React.Component<{}, AppState> {
 
     try {
       const response = await axios.get('/api/operators');
-      const operators: Array<Operator> = response.data;
+      const operators: Array<Operator> = response.data.filter(operator => operator.has_enough);
       this.setState(state => ({
         ...state,
         operators: this.prepareOptions(operators, 'operator_name', 'operator_id')
