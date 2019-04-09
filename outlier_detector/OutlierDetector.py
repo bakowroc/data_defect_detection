@@ -10,12 +10,6 @@ class OutlierDetector:
     def __init__(self, dataset, feature):
         self.dataset = dataset
         self.dataset_with_day = self.get_dataset_with_day_feature(feature)
-        self.kmean_clusters = {
-            'weekday': 7,
-            'monthday': 12,
-            'day': 31,
-            'timestamp': 50
-        }[feature]
 
     def get_dataset_with_day_feature(self, feature):
         dataset_with_day = self.dataset
@@ -23,12 +17,15 @@ class OutlierDetector:
             daytime_timestamp = datetime.fromtimestamp(data['timestamp'])
             if feature == 'day':
                 day = daytime_timestamp.day
+                dataset_with_day[index]['timestamp'] = data['timestamp']
 
             if feature == 'monthday':
                 day = "{}{}".format(daytime_timestamp.day, daytime_timestamp.month)
+                dataset_with_day[index]['timestamp'] = data['timestamp']
 
             if feature == 'weekday':
                 day = daytime_timestamp.weekday()
+                dataset_with_day[index]['timestamp'] = data['timestamp']
 
             if feature == 'timestamp':
                 day = data['timestamp']
@@ -37,12 +34,12 @@ class OutlierDetector:
 
         return dataset_with_day
 
-    def knn_mean_sim(self, similarity=2):
-        outlier_detect_method = lambda: sim_kmean(self.kmean_clusters, self.dataset_with_day, similarity)
+    def knn_mean_sim(self, clusters=30, similarity=2):
+        outlier_detect_method = lambda: sim_kmean(clusters, self.dataset_with_day, similarity)
         return self.run_calculations(outlier_detect_method)
 
-    def knn_mean_dist(self, distance_ratio=5):
-        outlier_detect_method = lambda: dist_kmean(self.kmean_clusters, self.dataset_with_day, distance_ratio)
+    def knn_mean_dist(self, clusters=30, distance_ratio=5):
+        outlier_detect_method = lambda: dist_kmean(clusters, self.dataset_with_day, distance_ratio)
         return self.run_calculations(outlier_detect_method)
 
     def regression_line(self):

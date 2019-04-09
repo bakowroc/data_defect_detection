@@ -26,14 +26,14 @@ def load_kpi_definitions(skip_if_exists=True):
     result = RawKpiDefinition.objects.all()
     filtered_result = filter_complex_kpis(result)
     for raw_kpi_definition in filtered_result:
-        d_id = raw_kpi_definition.id
+        definition_id = raw_kpi_definition.id
         description = raw_kpi_definition.text
         formula = raw_kpi_definition.formula
         tags = raw_kpi_definition.tags
         technology = raw_kpi_definition.technology
         unit = raw_kpi_definition.unit
 
-        KpiDefinition.create(id=d_id, description=description, formula=formula, tags=tags, technology=technology, unit=unit)
+        KpiDefinition.create(id=definition_id, description=description, formula=formula, tags=tags, technology=technology, unit=unit)
 
 
 def load_data_points(skip_if_exists=True):

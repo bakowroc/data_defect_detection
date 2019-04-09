@@ -8,6 +8,7 @@ from create_data_set_map.create_data_set_map import create_data_set_map
 from db.Database import Database
 from load_data.load_data import load_data
 from load_data.load_operators import load_operators
+from run_all.run_all import run_all
 
 
 @click.group()
@@ -39,6 +40,11 @@ def __load_operators():
 @cli.command('count_dataset')
 def __count_dataset():
     count_dataset()
+
+
+@cli.command('run_all')
+def __run_all():
+    run_all()
 
 
 @cli.command('server')

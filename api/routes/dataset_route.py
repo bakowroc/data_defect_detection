@@ -2,6 +2,7 @@ import json
 import falcon
 import time_uuid
 
+from api.json import CassandraDataEncoder
 from db.models.DataPoint import DataPoint
 
 

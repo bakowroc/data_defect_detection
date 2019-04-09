@@ -8,6 +8,7 @@ from db.models.DataPoint import DataPoint
 from db.models.DataSetMap import DataSetMap
 from db.models.AcronymNameMap import AcronymNameMap
 from db.models.Operator import Operator
+from db.models.Report import Report
 
 
 class Database:
@@ -27,6 +28,7 @@ class Database:
         sync_table(DataSetMap)
         sync_table(AcronymNameMap)
         sync_table(Operator)
+        sync_table(Report)
 
     def query(self, query):
         session = self.cluster.connect()
