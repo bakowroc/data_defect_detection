@@ -202,7 +202,7 @@ export class App extends React.Component<{}, AppState> {
              {key: 'day', value: 'day'},
              {key: 'weekday', value: 'weekday'},
              {key: 'monthday', value: 'monthday'},
-             {key: 'timestamp', value: 'timestamp'}
+             {key: 'none', value: 'none'}
            ]}
            onChange={(selected) => this.setState(state => ({
              selected: {

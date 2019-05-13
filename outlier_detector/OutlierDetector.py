@@ -17,29 +17,26 @@ class OutlierDetector:
             daytime_timestamp = datetime.fromtimestamp(data['timestamp'])
             if feature == 'day':
                 day = daytime_timestamp.day
-                dataset_with_day[index]['timestamp'] = data['timestamp']
 
             if feature == 'monthday':
                 day = "{}{}".format(daytime_timestamp.day, daytime_timestamp.month)
-                dataset_with_day[index]['timestamp'] = data['timestamp']
 
             if feature == 'weekday':
                 day = daytime_timestamp.weekday()
-                dataset_with_day[index]['timestamp'] = data['timestamp']
 
-            if feature == 'timestamp':
-                day = data['timestamp']
+            if feature == 'none':
+                day = dataset_with_day[index]['timestamp']
 
             dataset_with_day[index]['day'] = int(day)
 
         return dataset_with_day
 
-    def knn_mean_sim(self, clusters=30, similarity=2):
+    def knn_mean_sim(self, clusters=30, similarity=10):
         outlier_detect_method = lambda: sim_kmean(clusters, self.dataset_with_day, similarity)
         return self.run_calculations(outlier_detect_method)
 
-    def knn_mean_dist(self, clusters=30, distance_ratio=5):
-        outlier_detect_method = lambda: dist_kmean(clusters, self.dataset_with_day, distance_ratio)
+    def knn_mean_dist(self, clusters=30, variant='fixed', distance_ratio=2):
+        outlier_detect_method = lambda: dist_kmean(clusters, self.dataset_with_day, variant, distance_ratio)
         return self.run_calculations(outlier_detect_method)
 
     def regression_line(self):

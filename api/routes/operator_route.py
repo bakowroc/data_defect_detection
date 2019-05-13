@@ -12,4 +12,3 @@ class OperatorRoute(object):
 
         resp.body = json.dumps(result, ensure_ascii=False, cls=CassandraDataEncoder)
         resp.status = falcon.HTTP_200
-

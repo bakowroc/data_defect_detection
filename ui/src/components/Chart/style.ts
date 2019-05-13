@@ -5,6 +5,7 @@ export const style: {[key: string]: React.CSSProperties} = {
     marginTop: 100
   },
   chart: {
+    marginLeft: 20,
     marginTop: 100
   },
   summary: {
@@ -13,7 +14,7 @@ export const style: {[key: string]: React.CSSProperties} = {
     right: 0,
     top: 70,
     bottom: 0,
-    width: 300,
+    width: 280,
     zIndex: 100
   },
   colorBlock: {

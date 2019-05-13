@@ -21,5 +21,3 @@ class StandaloneApplication(gunicorn.app.base.BaseApplication, ABC):
 
     def load(self):
         return self.application
-
-

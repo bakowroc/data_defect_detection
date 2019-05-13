@@ -44,6 +44,3 @@ def server():
     api.add_route('/operators', OperatorRoute())
 
     StandaloneApplication(application, options).run()
-
-
-

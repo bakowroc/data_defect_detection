@@ -31,10 +31,10 @@ class OutlierRoute(object):
 
             final_result = []
             if method == 'sim':
-                final_result = detector.knn_mean_sim(similarity=3)
+                final_result = detector.knn_mean_sim(similarity=5)
 
             if method == 'dist':
-                final_result = detector.knn_mean_dist()
+                final_result = detector.knn_mean_dist(variant='fixed', distance_ratio=2)
 
             if method == 'reg':
                 final_result = detector.regression_line()
@@ -44,4 +44,3 @@ class OutlierRoute(object):
         except ValueError as err:
             resp.body = json.dumps({'error': "{}".format(str(err))})
             resp.status = falcon.HTTP_400
-

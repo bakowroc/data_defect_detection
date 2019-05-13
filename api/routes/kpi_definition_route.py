@@ -33,5 +33,3 @@ class KpiDefinitionRoute(object):
             missing_field = str(err)
             resp.body = json.dumps({'error': "{} is required".format(missing_field)})
             resp.status = falcon.HTTP_400
-
-
