@@ -185,8 +185,12 @@ export class App extends React.Component<{}, AppState> {
          <Select
            data={[
              {key: 'sim', value: 'sim'},
-             {key: 'dist', value: 'dist'},
+             {key: 'dist_f', value: 'dist_f'},
+             {key: 'dist_c', value: 'dist_c'},
              {key: 'reg', value: 'reg'},
+             {key: 'isolation_forest', value: 'isolation_forest'},
+             {key: 'random_split', value: 'random_split'},
+             {key: 'fusion', value: 'fusion'},
              ]}
            onChange={(selected) => this.setState(state => ({
              selected: {

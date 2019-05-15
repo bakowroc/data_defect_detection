@@ -50,7 +50,7 @@ export class Chart extends React.Component<ChartProps, ChartState> {
     return (
       <div style={style.chart}>
         {this.renderSummary(data)}
-        <XYPlot height={window.innerHeight - 150} width={this.getChartLength() - 300} {...colorProp}>
+        <XYPlot height={window.innerHeight - 150} width={this.getChartLength() - 280} {...colorProp}>
           <XAxis tickLabelAngle={-45} tickFormat={v => v.toExponential()}/>
           <YAxis tickFormat={v => v.toExponential()}/>
           {this.state.showOutlierData

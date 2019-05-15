@@ -1,9 +1,11 @@
 from datetime import datetime
 
 from outlier_detector.dist_kmean import dist_kmean
+from outlier_detector.isolation_forest import isl_forest
+from outlier_detector.learn_utils import flatten, count_duplicates
 from outlier_detector.linear_regression import linear_regression
+from outlier_detector.random_split import random_split
 from outlier_detector.sim_kmean import sim_kmean
-import numpy as np
 
 
 class OutlierDetector:
@@ -42,6 +44,27 @@ class OutlierDetector:
     def regression_line(self):
         return linear_regression(self.dataset_with_day)
 
+    def isolation_forest(self):
+        outlier_detect_method = lambda: isl_forest(self.dataset_with_day)
+        return self.run_calculations(outlier_detect_method)
+
+    def rnd_split(self):
+        return random_split(self.dataset_with_day)
+
+    def fusion(self, options):
+        clusters = options['clusters']
+        distance_ratio = options['distance_ratio']
+        similarity = options['similarity']
+        precision = options['precision']
+
+        knn_sim_result = self.knn_mean_sim(clusters, similarity)
+        knn_dist_f_result = self.knn_mean_dist(clusters, variant='fixed')
+        knn_dist_c_result = self.knn_mean_dist(clusters, variant='calculated', distance_ratio=distance_ratio)
+        regression_line_result = self.regression_line()
+
+        return self.get_fusion_result([knn_sim_result, knn_dist_f_result, knn_dist_c_result, regression_line_result],
+                                      precision=precision)
+
     @staticmethod
     def run_calculations(method):
         iterations = 10
@@ -73,5 +96,29 @@ class OutlierDetector:
                 'is_outlier': is_outlier,
                 'label': data_point['label']
             })
+
+        return final_result
+
+    @staticmethod
+    def get_fusion_result(methods, precision):
+        tolerancy = precision * len(methods)
+        outliers = []
+
+        for index, method_result in enumerate(methods):
+            method_outliers = []
+            for data_point in method_result:
+                if data_point['is_outlier']:
+                    method_outliers.append(data_point['id'])
+
+            outliers.append(method_outliers)
+
+        occurrences = dict(count_duplicates(flatten(outliers)))
+        final_result = []
+        for data_point in methods[0]:
+            if data_point['id'] in occurrences:
+                is_outlier = occurrences[data_point['id']] >= tolerancy
+                data_point['is_outlier'] = is_outlier
+
+            final_result.append(data_point)
 
         return final_result

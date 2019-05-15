@@ -2,17 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66852614-159d-4e5f-935f-73f2ec68125e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/outlier_detector/random_split.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/routes/kpi_definition_route.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/kpi_definition_route.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/routes/operator_route.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/operator_route.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/routes/outlier_route.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/outlier_route.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/outlier_detector/OutlierDetector.py" beforeDir="false" afterPath="$PROJECT_DIR$/outlier_detector/OutlierDetector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/outlier_detector/dist_kmean.py" beforeDir="false" afterPath="$PROJECT_DIR$/outlier_detector/dist_kmean.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/outlier_detector/learn_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/outlier_detector/learn_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/outlier_detector/linear_regression.py" beforeDir="false" afterPath="$PROJECT_DIR$/outlier_detector/linear_regression.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/outlier_detector/sim_kmean.py" beforeDir="false" afterPath="$PROJECT_DIR$/outlier_detector/sim_kmean.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/outlier_detector/isolation_forest.py" beforeDir="false" afterPath="$PROJECT_DIR$/outlier_detector/isolation_forest.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,24 +49,24 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/outlier_detector/sim_kmean.py">
+        <entry file="file://$PROJECT_DIR$/outlier_detector/isolation_forest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="52">
+              <caret line="8" column="113" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="113" />
               <folding>
-                <element signature="e#0#18#0" expanded="true" />
+                <element signature="e#0#44#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/outlier_detector/dist_kmean.py">
+        <entry file="file://$PROJECT_DIR$/outlier_detector/random_split.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="81" column="27" selection-start-line="81" selection-start-column="27" selection-end-line="81" selection-end-column="27" />
+            <state relative-caret-position="208">
+              <caret line="14" column="48" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
               <folding>
-                <element signature="e#0#18#0" expanded="true" />
+                <element signature="e#0#28#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -81,22 +75,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/outlier_detector/OutlierDetector.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="37" column="39" selection-start-line="37" selection-start-column="39" selection-end-line="37" selection-end-column="39" />
+            <state relative-caret-position="338">
+              <caret line="50" column="24" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/routes/outlier_route.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="33" column="44" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -131,10 +113,10 @@
       <find>K&gt;orekta</find>
       <find>n_samp</find>
       <find>1545</find>
-      <find>print</find>
       <find>XYP</find>
       <find>allow</find>
       <find>allow_filtering</find>
+      <find>print</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/ui</dir>
@@ -153,8 +135,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ui/.babelrc" />
-        <option value="$PROJECT_DIR$/ui/src/index.ejs" />
         <option value="$PROJECT_DIR$/ui/src/types/DataSet.ts" />
         <option value="$PROJECT_DIR$/ui/dist/index.html" />
         <option value="$PROJECT_DIR$/ui/src/components/Select/style.ts" />
@@ -179,7 +159,6 @@
         <option value="$PROJECT_DIR$/outlier_detector/featured_kmean.py" />
         <option value="$PROJECT_DIR$/outlier_detector/utils.py" />
         <option value="$PROJECT_DIR$/ui/src/typings/react-vis.d.ts" />
-        <option value="$PROJECT_DIR$/ui/src/components/Chart/Chart.tsx" />
         <option value="$PROJECT_DIR$/db/models/DataSetMap.py" />
         <option value="$PROJECT_DIR$/ui/src/types/DatasetMapRow.ts" />
         <option value="$PROJECT_DIR$/db/models/Operator.py" />
@@ -196,21 +175,24 @@
         <option value="$PROJECT_DIR$/cli/cli.py" />
         <option value="$PROJECT_DIR$/db/models/Report.py" />
         <option value="$PROJECT_DIR$/run_all/run_all.py" />
-        <option value="$PROJECT_DIR$/ui/src/components/Chart/style.ts" />
         <option value="$PROJECT_DIR$/outlier_detector/linear_regression.py" />
-        <option value="$PROJECT_DIR$/outlier_detector/learn_utils.py" />
-        <option value="$PROJECT_DIR$/api/routes/outlier_route.py" />
-        <option value="$PROJECT_DIR$/outlier_detector/sim_kmean.py" />
-        <option value="$PROJECT_DIR$/ui/src/components/App/App.tsx" />
-        <option value="$PROJECT_DIR$/outlier_detector/OutlierDetector.py" />
+        <option value="$PROJECT_DIR$/ui/src/components/Chart/style.ts" />
+        <option value="$PROJECT_DIR$/ui/src/components/Chart/Chart.tsx" />
         <option value="$PROJECT_DIR$/outlier_detector/dist_kmean.py" />
+        <option value="$PROJECT_DIR$/outlier_detector/learn_utils.py" />
+        <option value="$PROJECT_DIR$/outlier_detector/sim_kmean.py" />
+        <option value="$PROJECT_DIR$/outlier_detector/isolation_forest.py" />
+        <option value="$PROJECT_DIR$/ui/src/components/App/App.tsx" />
+        <option value="$PROJECT_DIR$/api/routes/outlier_route.py" />
+        <option value="$PROJECT_DIR$/outlier_detector/OutlierDetector.py" />
+        <option value="$PROJECT_DIR$/outlier_detector/random_split.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="4">
-    <option name="x" value="2770" />
+    <option name="x" value="2518" />
     <option name="y" value="27" />
-    <option name="width" value="1070" />
+    <option name="width" value="1322" />
     <option name="height" value="1016" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -222,7 +204,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -245,11 +226,6 @@
               <item name="data_defect_detection" type="b2602c69:ProjectViewProjectNode" />
               <item name="data_defect_detection" type="462c0819:PsiDirectoryNode" />
               <item name="cli" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="data_defect_detection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="data_defect_detection" type="462c0819:PsiDirectoryNode" />
-              <item name="load_data" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="data_defect_detection" type="b2602c69:ProjectViewProjectNode" />
@@ -285,28 +261,81 @@
             <path>
               <item name="data_defect_detection" type="b2602c69:ProjectViewProjectNode" />
               <item name="data_defect_detection" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Chart" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="data_defect_detection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="data_defect_detection" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="data_defect_detection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Pipenv (data_defect_detection) &gt;" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="data_defect_detection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Pipenv (data_defect_detection) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="python3.6" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="data_defect_detection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Pipenv (data_defect_detection) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="python3.6" type="462c0819:PsiDirectoryNode" />
+              <item name="site-packages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="data_defect_detection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Pipenv (data_defect_detection) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="python3.6" type="462c0819:PsiDirectoryNode" />
+              <item name="site-packages" type="462c0819:PsiDirectoryNode" />
+              <item name="numpy" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="data_defect_detection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Pipenv (data_defect_detection) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="python3.6" type="462c0819:PsiDirectoryNode" />
+              <item name="site-packages" type="462c0819:PsiDirectoryNode" />
+              <item name="numpy" type="462c0819:PsiDirectoryNode" />
+              <item name="random" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="data_defect_detection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Pipenv (data_defect_detection) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="site-packages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="data_defect_detection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Pipenv (data_defect_detection) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="site-packages" type="462c0819:PsiDirectoryNode" />
+              <item name="numpy" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="data_defect_detection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Pipenv (data_defect_detection) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="site-packages" type="462c0819:PsiDirectoryNode" />
+              <item name="numpy" type="462c0819:PsiDirectoryNode" />
+              <item name="random" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557775257396" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558183654089" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../midi-controller" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="/usr/bin/node" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -564,16 +593,25 @@
       <workItem from="1554828341005" duration="304000" />
       <workItem from="1554906733406" duration="2816000" />
       <workItem from="1557168819217" duration="29000" />
-      <workItem from="1557761158501" duration="13849000" />
+      <workItem from="1557761158501" duration="13979000" />
+      <workItem from="1557926420226" duration="7839000" />
+      <workItem from="1558170188611" duration="9945000" />
     </task>
+    <task id="LOCAL-00001" summary="Fix algorithms, code refactor">
+      <created>1557775275443</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1557775275443</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="196851000" />
+    <option name="totallyTimeSpent" value="214765000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2770" y="27" width="1070" height="1016" extended-state="4" />
-    <editor active="true" />
+    <frame x="684" y="27" width="1236" height="1016" extended-state="4" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="1" />
@@ -592,7 +630,7 @@
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32951945" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49893162" weight="0.31350115" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49893162" weight="0.31235698" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50106835" side_tool="true" weight="0.298627" />
       <window_info anchor="bottom" id="TypeScript" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -611,22 +649,11 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Fix algorithms, code refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix algorithms, code refactor" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/block.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/src/components/Chart/dads.html" />
-    <entry file="file://$USER_HOME$/.local/share/virtualenvs/data_defect_detection-I3J651vf/lib/python3.6/site-packages/numpy/lib/shape_base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="715" column="4" selection-start-line="715" selection-start-column="4" selection-end-line="715" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.local/lib/python2.7/site-packages/pipenv/patched/piptools/repositories/pypi.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="588">
@@ -724,16 +751,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="1641" column="22" selection-start-line="1641" selection-start-column="22" selection-end-line="1641" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/src/components/Chart/Chart.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="75" column="53" selection-start-line="75" selection-start-column="53" selection-end-line="75" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#56#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -910,20 +927,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ui/src/components/Chart/style.ts">
+    <entry file="file://$PROJECT_DIR$/ui/src/components/Chart/Chart.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        <state relative-caret-position="66">
+          <caret line="42" column="27" lean-forward="true" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#56#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/outlier_detector/sim_kmean.py">
+    <entry file="file://$PROJECT_DIR$/ui/src/components/Chart/style.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="26">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -937,24 +954,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ui/src/components/App/App.tsx">
+    <entry file="file://$PROJECT_DIR$/outlier_detector/dist_kmean.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="204" column="39" selection-start-line="204" selection-start-column="39" selection-end-line="204" selection-end-column="39" />
+        <state relative-caret-position="104">
+          <caret line="8" column="4" selection-start-line="8" selection-end-line="9" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/outlier_detector/learn_utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="650">
-          <caret line="37" column="54" selection-start-line="37" selection-start-column="54" selection-end-line="37" selection-end-column="54" />
+        <state relative-caret-position="237">
+          <caret line="34" column="29" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/outlier_detector/sim_kmean.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="27" column="51" selection-start-line="27" selection-start-column="51" selection-end-line="27" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.local/share/virtualenvs/data_defect_detection-I3J651vf/lib/python3.6/site-packages/numpy/random/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/outlier_detector/isolation_forest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="8" column="113" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="113" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/src/components/App/App.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="191" column="55" selection-start-line="191" selection-start-column="55" selection-end-line="191" selection-end-column="55" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api/routes/outlier_route.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="33" column="44" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
+        <state relative-caret-position="445">
+          <caret line="48" column="51" lean-forward="true" selection-start-line="48" selection-start-column="51" selection-end-line="48" selection-end-column="51" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
@@ -963,20 +1016,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/outlier_detector/OutlierDetector.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="37" column="39" selection-start-line="37" selection-start-column="39" selection-end-line="37" selection-end-column="39" />
+        <state relative-caret-position="338">
+          <caret line="50" column="24" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/outlier_detector/dist_kmean.py">
+    <entry file="file://$PROJECT_DIR$/outlier_detector/random_split.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="81" column="27" selection-start-line="81" selection-start-column="27" selection-end-line="81" selection-end-column="27" />
+        <state relative-caret-position="208">
+          <caret line="14" column="48" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>

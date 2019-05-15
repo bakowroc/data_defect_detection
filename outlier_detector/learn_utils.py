@@ -1,4 +1,5 @@
 import numpy as np
+import collections
 
 
 def create_windows(data, window_len, slide_len):
@@ -39,3 +40,16 @@ def create_points_with_labels(dataset, labels):
         dataset_with_labels.append(point_with_label)
 
     return dataset_with_labels
+
+
+def flatten(to_flat_list):
+    flat_list = []
+    for x in to_flat_list:
+        for item in x:
+            flat_list.append(item)
+
+    return flat_list
+
+
+def count_duplicates(arg):
+    return collections.Counter(arg)

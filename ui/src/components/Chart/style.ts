@@ -5,7 +5,7 @@ export const style: {[key: string]: React.CSSProperties} = {
     marginTop: 100
   },
   chart: {
-    marginLeft: 20,
+    marginLeft: 0,
     marginTop: 100
   },
   summary: {

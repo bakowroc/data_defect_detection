@@ -33,11 +33,28 @@ class OutlierRoute(object):
             if method == 'sim':
                 final_result = detector.knn_mean_sim(similarity=5)
 
-            if method == 'dist':
-                final_result = detector.knn_mean_dist(variant='fixed', distance_ratio=2)
+            if method == 'dist_f':
+                final_result = detector.knn_mean_dist(variant='fixed')
+
+            if method == 'dist_c':
+                final_result = detector.knn_mean_dist(variant='calculated', distance_ratio=6)
 
             if method == 'reg':
                 final_result = detector.regression_line()
+
+            if method == 'isolation_forest':
+                final_result = detector.isolation_forest()
+
+            if method == 'random_split':
+                final_result = detector.rnd_split()
+
+            if method == 'fusion':
+                final_result = detector.fusion({
+                    'clusters': 30,
+                    'distance_ratio': 6,
+                    'similarity': 5,
+                    'precision': 0.5
+                })
 
             resp.body = json.dumps(final_result, ensure_ascii=False)
             resp.status = falcon.HTTP_200

@@ -34,17 +34,15 @@ def dist_kmean(n_clusters, dataset, variant, distance_ratio):
 
 def calculate_points_distance(centroid, data_point) -> float:
     _x = (centroid[0] - data_point['value']) ** 2
-    _y = (centroid[1] - data_point['day']) ** 2
-    _z = (centroid[2] - data_point['timestamp']) ** 2
 
-    _sum = np.sum(_x + _y + _z)
-    return np.sqrt(_sum)
+    return np.sqrt(_x)
 
 
 def calculate_distances(dataset, centroids):
     distances = {}
     for data_point in dataset:
         label = data_point['label']
+
         if label not in distances:
             distances[label] = {}
 
@@ -60,7 +58,7 @@ def calculate_ratio(dataset, distances):
         dist = distances[data_point['label']][data_point['id']]
         is_max_point = dist == _max
         if is_max_point:
-            max_values_with_ratio[data_point['id']] = dist / _min
+            max_values_with_ratio[data_point['id']] = dist / _mean
 
     return max_values_with_ratio
 
@@ -79,14 +77,18 @@ def get_cluster_info(cluster_distances):
 
 def get_fixed_outliers(data_point, ratios):
     sorted_ratios = sorted(ratios.items(), key=lambda kv: kv[1])
-    print(sorted_ratios[-5:])
     outliers = []
     for _tuple in sorted_ratios[-5:]:
         outliers.append(_tuple[0])
 
-    print(outliers)
     return data_point['id'] in outliers
 
 
 def get_calculated_outliers(data_point, ratios, distance_ratio):
-    return True
+    sorted_ratios = sorted(ratios.items(), key=lambda kv: kv[1])
+    outliers = []
+    for _tuple in sorted_ratios:
+        if _tuple[1] > distance_ratio:
+            outliers.append(_tuple[0])
+
+    return data_point['id'] in outliers
