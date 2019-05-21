@@ -1,4 +1,5 @@
 import datetime
+import json
 
 import time_uuid
 
@@ -8,67 +9,61 @@ from db.models.Report import Report
 from outlier_detector.OutlierDetector import OutlierDetector
 from utils.date import create_uuid
 
+TEST_CASES = [
+    {
+        'ID': 1,
+        'OPTIONS': {
+            'clusters': 30,
+            'distance_ratio': 6,
+            'similarity': 5,
+            'precision': 0.5
+        }
+    }
+]
+
 
 def run_all():
     print("Calculating outliers for all defined algorithms")
     if len(DataSetMap.objects.limit(1)) is 0:
         raise ResourceWarning("collection data_set_map is empty")
 
-    result = DataSetMap.objects.all().filter(has_enough=True).allow_filtering()
-    print(len(result))
-    features = ['day', 'weekday', 'monthday', 'timestamp']
+    result = DataSetMap.objects.all().filter(has_enough=True).limit(5).allow_filtering()
+    features = ['day', 'weekday', 'monthday', 'none']
 
-    for data_set in result:
+    for dataset in result:
         for feature in features:
-            operator_id = data_set.operator_id
-            acronym = data_set.acronym
-            kpi_name = data_set.kpi_name
+            operator_id = dataset.operator_id
+            acronym = dataset.acronym
+            kpi_name = dataset.kpi_name
 
             data_points = DataPoint.objects.filter(operator_id=operator_id, acronym=acronym, kpi_name=kpi_name)
             detector = OutlierDetector(dataset=parse_result(data_points), feature=feature)
-            run_kmean_dist(data_set, detector, feature)
-            run_kmean_sim(data_set, detector, feature)
+            for test in TEST_CASES:
+                options = test['OPTIONS']
+                result_dict = detector.fusion(options)
+                write_test_result(test, result_dict, dataset)
 
 
-def run_kmean_dist(data_set, detector, feature):
-    method = "kmean_dist"
-    clusters = [10, 20, 40, 60, 80]
-    distance_ratios = [1.2, 1.3, 1.6, 2, 2.5]
+def write_test_result(test, result_dict, dataset):
+    json_data = test
+    operator_id = dataset.operator_id
+    acronym = dataset.acronym
+    kpi_name = dataset.kpi_name
 
-    start_time = datetime.datetime.now()
-    for cluster in clusters:
-        for distance_ratio in distance_ratios:
-            outliers = list(filter(lambda p: p['is_outlier'], detector.knn_mean_dist(cluster, distance_ratio)))
-            params = "{}|{}|{}".format(feature, cluster, distance_ratio)
+    json_data['META'] = {
+        'operator_id': operator_id,
+        'acronym': acronym,
+        'kpi_name': kpi_name,
+    }
 
-            save_report(data_set, method, len(outliers), params, start_time, datetime.datetime.now())
+    json_data['RESULTS'] = {}
+    for k, v in result_dict.items():
+        outliers = list(map(lambda dp: [dp['value'], dp['timestamp']] if dp['is_outlier'] else None, v))
+        json_data['RESULTS'][k] = list(filter(lambda o: o is not None, outliers))
 
-
-def run_kmean_sim(data_set, detector, feature):
-    method = "kmean_sim"
-    clusters = [10, 20, 40, 60, 80]
-    similarities = [1, 2, 3, 4]
-
-    start_time = datetime.datetime.now()
-    for cluster in clusters:
-        for similarity in similarities:
-            outliers = list(filter(lambda p: p['is_outlier'], detector.knn_mean_sim(cluster, similarity)))
-            params = "{}|{}|{}".format(feature, cluster, similarity)
-
-            save_report(data_set, method, len(outliers), params, start_time, datetime.datetime.now())
-
-
-def save_report(data_set, method, count_outliers, params, start_time, end_time):
-    Report.create(
-        operator_id=data_set.operator_id,
-        acronym=data_set.acronym,
-        kpi_name=data_set.kpi_name,
-        method=method,
-        count_outliers=count_outliers,
-        params=params,
-        start_time=create_uuid(start_time),
-        end_time=create_uuid(end_time)
-    )
+    file_name = './tests_results/{}-{}-{}-{}.json'.format(test['ID'], operator_id, acronym, kpi_name)
+    with open(file_name, 'w+') as outfile:
+        json.dump(json_data, outfile)
 
 
 def parse_result(data_set):

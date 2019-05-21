@@ -2,11 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66852614-159d-4e5f-935f-73f2ec68125e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/outlier_detector/random_split.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests_results/1-283-ORIZABA-LTE_1079.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests_results/1-283-ORIZABA-LTE_5003.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests_results/1-283-ORIZABA-LTE_5036.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests_results/1-283-ORIZABA-LTE_5058.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests_results/1-283-ORIZABA-LTE_5060.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/routes/outlier_route.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/outlier_route.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/outlier_detector/OutlierDetector.py" beforeDir="false" afterPath="$PROJECT_DIR$/outlier_detector/OutlierDetector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/outlier_detector/isolation_forest.py" beforeDir="false" afterPath="$PROJECT_DIR$/outlier_detector/isolation_forest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run_all/run_all.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_all/run_all.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,7 +23,7 @@
     <SUITE FILE_PATH="coverage/data_defect_detection$server.coverage" NAME="server Coverage Results" MODIFIED="1551543773003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/data_defect_detection$create_data_set_map.coverage" NAME="create_data_set_map Coverage Results" MODIFIED="1551879023406" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/data_defect_detection$load_data.coverage" NAME="load_data Coverage Results" MODIFIED="1551616331964" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/data_defect_detection$run_all.coverage" NAME="run_all Coverage Results" MODIFIED="1554907669575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/data_defect_detection$run_all.coverage" NAME="run_all Coverage Results" MODIFIED="1558462452244" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/data_defect_detection$anonymize.coverage" NAME="load_data Coverage Results" MODIFIED="1551541677074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/data_defect_detection$test_outlier.coverage" NAME="test_outlier Coverage Results" MODIFIED="1551807065862" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/data_defect_detection$count_dataset.coverage" NAME="count dataset Coverage Results" MODIFIED="1553002093746" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -49,37 +53,43 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/outlier_detector/isolation_forest.py">
+        <entry file="file://$PROJECT_DIR$/outlier_detector/OutlierDetector.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="52">
-              <caret line="8" column="113" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="113" />
+            <state relative-caret-position="-7">
+              <caret line="15" column="52" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
               <folding>
-                <element signature="e#0#44#0" expanded="true" />
+                <element signature="e#0#29#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/outlier_detector/random_split.py">
+        <entry file="file://$PROJECT_DIR$/ui/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="14" column="48" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
+            <state relative-caret-position="52">
+              <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/routes/outlier_route.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="692">
+              <caret line="56" column="35" lean-forward="true" selection-start-line="56" selection-start-column="35" selection-end-line="56" selection-end-column="35" />
               <folding>
-                <element signature="e#0#28#0" expanded="true" />
+                <element signature="e#0#11#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/outlier_detector/OutlierDetector.py">
+        <entry file="file://$PROJECT_DIR$/run_all/run_all.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="50" column="24" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
-              <folding>
-                <element signature="e#0#29#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="52">
+              <caret line="29" column="88" selection-start-line="29" selection-start-column="88" selection-end-line="29" selection-end-column="88" />
             </state>
           </provider>
         </entry>
@@ -135,7 +145,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ui/src/types/DataSet.ts" />
         <option value="$PROJECT_DIR$/ui/dist/index.html" />
         <option value="$PROJECT_DIR$/ui/src/components/Select/style.ts" />
         <option value="$PROJECT_DIR$/ui/package.json" />
@@ -174,7 +183,6 @@
         <option value="$PROJECT_DIR$/db/Database.py" />
         <option value="$PROJECT_DIR$/cli/cli.py" />
         <option value="$PROJECT_DIR$/db/models/Report.py" />
-        <option value="$PROJECT_DIR$/run_all/run_all.py" />
         <option value="$PROJECT_DIR$/outlier_detector/linear_regression.py" />
         <option value="$PROJECT_DIR$/ui/src/components/Chart/style.ts" />
         <option value="$PROJECT_DIR$/ui/src/components/Chart/Chart.tsx" />
@@ -183,9 +191,11 @@
         <option value="$PROJECT_DIR$/outlier_detector/sim_kmean.py" />
         <option value="$PROJECT_DIR$/outlier_detector/isolation_forest.py" />
         <option value="$PROJECT_DIR$/ui/src/components/App/App.tsx" />
-        <option value="$PROJECT_DIR$/api/routes/outlier_route.py" />
-        <option value="$PROJECT_DIR$/outlier_detector/OutlierDetector.py" />
         <option value="$PROJECT_DIR$/outlier_detector/random_split.py" />
+        <option value="$PROJECT_DIR$/api/routes/outlier_route.py" />
+        <option value="$PROJECT_DIR$/run_all/run_all.py" />
+        <option value="$PROJECT_DIR$/outlier_detector/OutlierDetector.py" />
+        <option value="$PROJECT_DIR$/ui/.gitignore" />
       </list>
     </option>
   </component>
@@ -204,6 +214,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -231,6 +242,11 @@
               <item name="data_defect_detection" type="b2602c69:ProjectViewProjectNode" />
               <item name="data_defect_detection" type="462c0819:PsiDirectoryNode" />
               <item name="outlier_detector" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="data_defect_detection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="data_defect_detection" type="462c0819:PsiDirectoryNode" />
+              <item name="run_all" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="data_defect_detection" type="b2602c69:ProjectViewProjectNode" />
@@ -328,14 +344,13 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558183654089" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558462628091" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../midi-controller" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="/usr/bin/node" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -596,6 +611,7 @@
       <workItem from="1557761158501" duration="13979000" />
       <workItem from="1557926420226" duration="7839000" />
       <workItem from="1558170188611" duration="9945000" />
+      <workItem from="1558460332062" duration="2295000" />
     </task>
     <task id="LOCAL-00001" summary="Fix algorithms, code refactor">
       <created>1557775275443</created>
@@ -608,10 +624,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="214765000" />
+    <option name="totallyTimeSpent" value="217060000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="684" y="27" width="1236" height="1016" extended-state="4" />
+    <frame x="2518" y="27" width="1322" height="1016" extended-state="4" />
+    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="1" />
@@ -625,7 +642,7 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info active="true" anchor="bottom" content_ui="combo" id="Project" order="6" visible="true" weight="0.35583523" />
+      <window_info active="true" anchor="bottom" content_ui="combo" id="Project" order="6" visible="true" weight="0.3638444" />
       <window_info anchor="bottom" id="TODO" order="7" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32951945" />
@@ -654,13 +671,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Fix algorithms, code refactor" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/.local/lib/python2.7/site-packages/pipenv/patched/piptools/repositories/pypi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="77" selection-start-line="77" selection-end-line="77" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ui/src/types/DatasetRow.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="104">
@@ -879,7 +889,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/models/Report.py" />
-    <entry file="file://$PROJECT_DIR$/run_all/run_all.py" />
     <entry file="file://$PROJECT_DIR$/utils/date.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="754">
@@ -987,6 +996,23 @@
     <entry file="file://$USER_HOME$/.local/share/virtualenvs/data_defect_detection-I3J651vf/lib/python3.6/site-packages/numpy/random/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/ui/src/components/App/App.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="191" column="55" selection-start-line="191" selection-start-column="55" selection-end-line="191" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/outlier_detector/random_split.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="14" column="48" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/outlier_detector/isolation_forest.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="52">
@@ -997,17 +1023,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ui/src/components/App/App.tsx">
+    <entry file="file://$PROJECT_DIR$/run_all/run_all.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="191" column="55" selection-start-line="191" selection-start-column="55" selection-end-line="191" selection-end-column="55" />
+        <state relative-caret-position="52">
+          <caret line="29" column="88" selection-start-line="29" selection-start-column="88" selection-end-line="29" selection-end-column="88" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api/routes/outlier_route.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="48" column="51" lean-forward="true" selection-start-line="48" selection-start-column="51" selection-end-line="48" selection-end-column="51" />
+        <state relative-caret-position="692">
+          <caret line="56" column="35" lean-forward="true" selection-start-line="56" selection-start-column="35" selection-end-line="56" selection-end-column="35" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
@@ -1016,21 +1042,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/outlier_detector/OutlierDetector.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="50" column="24" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
+        <state relative-caret-position="-7">
+          <caret line="15" column="52" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/outlier_detector/random_split.py">
+    <entry file="file://$PROJECT_DIR$/ui/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="14" column="48" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="52">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
         </state>
       </provider>
     </entry>

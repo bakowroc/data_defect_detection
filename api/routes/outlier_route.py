@@ -54,7 +54,7 @@ class OutlierRoute(object):
                     'distance_ratio': 6,
                     'similarity': 5,
                     'precision': 0.5
-                })
+                })['fusion_result']
 
             resp.body = json.dumps(final_result, ensure_ascii=False)
             resp.status = falcon.HTTP_200

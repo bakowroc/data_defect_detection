@@ -62,8 +62,17 @@ class OutlierDetector:
         knn_dist_c_result = self.knn_mean_dist(clusters, variant='calculated', distance_ratio=distance_ratio)
         regression_line_result = self.regression_line()
 
-        return self.get_fusion_result([knn_sim_result, knn_dist_f_result, knn_dist_c_result, regression_line_result],
-                                      precision=precision)
+        fusion_result = self.get_fusion_result(
+            [knn_sim_result, knn_dist_f_result, knn_dist_c_result, regression_line_result],
+            precision=precision)
+
+        return {
+            'knn_sim_result': knn_sim_result,
+            'knn_dist_f_result': knn_dist_f_result,
+            'knn_dist_c_result': knn_dist_c_result,
+            'regression_line_result': regression_line_result,
+            'fusion_result': fusion_result
+        }
 
     @staticmethod
     def run_calculations(method):
