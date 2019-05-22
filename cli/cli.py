@@ -8,6 +8,7 @@ from create_data_set_map.create_data_set_map import create_data_set_map
 from db.Database import Database
 from load_data.load_data import load_data
 from load_data.load_operators import load_operators
+from run_all.draw_plot import draw_plot
 from run_all.run_all import run_all
 
 
@@ -47,9 +48,11 @@ def __run_all():
     run_all()
 
 
+@cli.command('draw_plot')
+def __draw_plot():
+    draw_plot()
+
+
 @cli.command('server')
 def __server():
     server()
-
-
-

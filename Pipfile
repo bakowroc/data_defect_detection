@@ -15,7 +15,7 @@ falcon = "*"
 gunicorn = "*"
 scikit-learn = "*"
 pandas = "*"
-learn-utils = "*"
+matplotlib = "*"
 
 [requires]
 python_version = "3.6"

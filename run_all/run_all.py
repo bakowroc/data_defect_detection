@@ -1,23 +1,18 @@
-import datetime
 import json
+import os
 
 import time_uuid
 
 from db.models.DataPoint import DataPoint
 from db.models.DataSetMap import DataSetMap
-from db.models.Report import Report
 from outlier_detector.OutlierDetector import OutlierDetector
-from utils.date import create_uuid
+from run_all.TEST_CASES import TEST_CASES
 
-TEST_CASES = [
+TEST_DATASETS = [
     {
-        'ID': 1,
-        'OPTIONS': {
-            'clusters': 30,
-            'distance_ratio': 6,
-            'similarity': 5,
-            'precision': 0.5
-        }
+        'operator_id': 53,
+        'acronym': 'MOGILA',
+        'kpi_name': 'LTE_1079'
     }
 ]
 
@@ -27,28 +22,29 @@ def run_all():
     if len(DataSetMap.objects.limit(1)) is 0:
         raise ResourceWarning("collection data_set_map is empty")
 
-    result = DataSetMap.objects.all().filter(has_enough=True).limit(5).allow_filtering()
     features = ['day', 'weekday', 'monthday', 'none']
 
-    for dataset in result:
+    for dataset in TEST_DATASETS:
         for feature in features:
-            operator_id = dataset.operator_id
-            acronym = dataset.acronym
-            kpi_name = dataset.kpi_name
+            operator_id = dataset['operator_id']
+            acronym = dataset['acronym']
+            kpi_name = dataset['kpi_name']
 
             data_points = DataPoint.objects.filter(operator_id=operator_id, acronym=acronym, kpi_name=kpi_name)
             detector = OutlierDetector(dataset=parse_result(data_points), feature=feature)
+
             for test in TEST_CASES:
                 options = test['OPTIONS']
                 result_dict = detector.fusion(options)
-                write_test_result(test, result_dict, dataset)
+                write_test_result(test, result_dict, dataset, feature)
 
 
-def write_test_result(test, result_dict, dataset):
+def write_test_result(test, result_dict, dataset, feature):
     json_data = test
-    operator_id = dataset.operator_id
-    acronym = dataset.acronym
-    kpi_name = dataset.kpi_name
+    json_data['OPTIONS']['feature'] = feature
+    operator_id = dataset['operator_id']
+    acronym = dataset['acronym']
+    kpi_name = dataset['kpi_name']
 
     json_data['META'] = {
         'operator_id': operator_id,
@@ -61,7 +57,12 @@ def write_test_result(test, result_dict, dataset):
         outliers = list(map(lambda dp: [dp['value'], dp['timestamp']] if dp['is_outlier'] else None, v))
         json_data['RESULTS'][k] = list(filter(lambda o: o is not None, outliers))
 
-    file_name = './tests_results/{}-{}-{}-{}.json'.format(test['ID'], operator_id, acronym, kpi_name)
+    dir_name = './tests_results/{}-{}-{}'.format(operator_id, acronym, kpi_name)
+    print(dir_name)
+    if not os.path.exists(dir_name):
+        os.makedirs(dir_name)
+
+    file_name = '{}/{}-{}.json'.format(dir_name, feature, test['ID'])
     with open(file_name, 'w+') as outfile:
         json.dump(json_data, outfile)
 

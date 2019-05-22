@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66852614-159d-4e5f-935f-73f2ec68125e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tests_results/1-283-ORIZABA-LTE_1079.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests_results/1-283-ORIZABA-LTE_5003.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests_results/1-283-ORIZABA-LTE_5036.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests_results/1-283-ORIZABA-LTE_5058.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests_results/1-283-ORIZABA-LTE_5060.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run_all/TEST_CASES.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run_all/draw_plot.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/routes/outlier_route.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/outlier_route.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/outlier_detector/OutlierDetector.py" beforeDir="false" afterPath="$PROJECT_DIR$/outlier_detector/OutlierDetector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pipfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cli/cli.py" beforeDir="false" afterPath="$PROJECT_DIR$/cli/cli.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run_all/run_all.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_all/run_all.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -23,7 +21,8 @@
     <SUITE FILE_PATH="coverage/data_defect_detection$server.coverage" NAME="server Coverage Results" MODIFIED="1551543773003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/data_defect_detection$create_data_set_map.coverage" NAME="create_data_set_map Coverage Results" MODIFIED="1551879023406" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/data_defect_detection$load_data.coverage" NAME="load_data Coverage Results" MODIFIED="1551616331964" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/data_defect_detection$run_all.coverage" NAME="run_all Coverage Results" MODIFIED="1558462452244" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/data_defect_detection$run_all.coverage" NAME="run_all Coverage Results" MODIFIED="1558532111909" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/data_defect_detection$draw_plot.coverage" NAME="draw_plot Coverage Results" MODIFIED="1558534378824" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/data_defect_detection$anonymize.coverage" NAME="load_data Coverage Results" MODIFIED="1551541677074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/data_defect_detection$test_outlier.coverage" NAME="test_outlier Coverage Results" MODIFIED="1551807065862" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/data_defect_detection$count_dataset.coverage" NAME="count dataset Coverage Results" MODIFIED="1553002093746" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -52,32 +51,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/outlier_detector/OutlierDetector.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7">
-              <caret line="15" column="52" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
-              <folding>
-                <element signature="e#0#29#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ui/.gitignore">
+        <entry file="file://$PROJECT_DIR$/run_all/draw_plot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="52">
-              <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/routes/outlier_route.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="692">
-              <caret line="56" column="35" lean-forward="true" selection-start-line="56" selection-start-column="35" selection-end-line="56" selection-end-column="35" />
+            <state relative-caret-position="267">
+              <caret line="21" column="63" lean-forward="true" selection-start-line="21" selection-start-column="63" selection-end-line="21" selection-end-column="63" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -88,8 +66,32 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/run_all/run_all.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="52">
-              <caret line="29" column="88" selection-start-line="29" selection-start-column="88" selection-end-line="29" selection-end-column="88" />
+            <state relative-caret-position="78">
+              <caret line="24" column="53" lean-forward="true" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="53" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cli/cli.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="335">
+              <caret line="52" column="12" selection-start-line="52" selection-start-column="12" selection-end-line="52" selection-end-column="12" />
+              <folding>
+                <element signature="e#0#12#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Pipfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="260">
+              <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -127,6 +129,7 @@
       <find>allow</find>
       <find>allow_filtering</find>
       <find>print</find>
+      <find>sca</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/ui</dir>
@@ -145,9 +148,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ui/dist/index.html" />
-        <option value="$PROJECT_DIR$/ui/src/components/Select/style.ts" />
-        <option value="$PROJECT_DIR$/ui/package.json" />
         <option value="$PROJECT_DIR$/api/routes/kpi_definitions_route.py" />
         <option value="$PROJECT_DIR$/ui/src/types/KpiDefinition.ts" />
         <option value="$PROJECT_DIR$/ui/src/components/Select/Select.tsx" />
@@ -181,25 +181,28 @@
         <option value="$PROJECT_DIR$/api/routes/dataset_route.py" />
         <option value="$PROJECT_DIR$/db/models/RawKpiDefinition.py" />
         <option value="$PROJECT_DIR$/db/Database.py" />
-        <option value="$PROJECT_DIR$/cli/cli.py" />
         <option value="$PROJECT_DIR$/db/models/Report.py" />
         <option value="$PROJECT_DIR$/outlier_detector/linear_regression.py" />
         <option value="$PROJECT_DIR$/ui/src/components/Chart/style.ts" />
         <option value="$PROJECT_DIR$/ui/src/components/Chart/Chart.tsx" />
-        <option value="$PROJECT_DIR$/outlier_detector/dist_kmean.py" />
         <option value="$PROJECT_DIR$/outlier_detector/learn_utils.py" />
         <option value="$PROJECT_DIR$/outlier_detector/sim_kmean.py" />
         <option value="$PROJECT_DIR$/outlier_detector/isolation_forest.py" />
         <option value="$PROJECT_DIR$/ui/src/components/App/App.tsx" />
         <option value="$PROJECT_DIR$/outlier_detector/random_split.py" />
         <option value="$PROJECT_DIR$/api/routes/outlier_route.py" />
-        <option value="$PROJECT_DIR$/run_all/run_all.py" />
         <option value="$PROJECT_DIR$/outlier_detector/OutlierDetector.py" />
         <option value="$PROJECT_DIR$/ui/.gitignore" />
+        <option value="$PROJECT_DIR$/outlier_detector/dist_kmean.py" />
+        <option value="$PROJECT_DIR$/run_all/TEST_CASES.py" />
+        <option value="$PROJECT_DIR$/Pipfile" />
+        <option value="$PROJECT_DIR$/cli/cli.py" />
+        <option value="$PROJECT_DIR$/run_all/run_all.py" />
+        <option value="$PROJECT_DIR$/run_all/draw_plot.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="4">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="2518" />
     <option name="y" value="27" />
     <option name="width" value="1322" />
@@ -225,17 +228,6 @@
             <path>
               <item name="data_defect_detection" type="b2602c69:ProjectViewProjectNode" />
               <item name="data_defect_detection" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="data_defect_detection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="data_defect_detection" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="data_defect_detection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="data_defect_detection" type="462c0819:PsiDirectoryNode" />
               <item name="cli" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -251,93 +243,7 @@
             <path>
               <item name="data_defect_detection" type="b2602c69:ProjectViewProjectNode" />
               <item name="data_defect_detection" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="data_defect_detection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="data_defect_detection" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="data_defect_detection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="data_defect_detection" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="data_defect_detection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="data_defect_detection" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="App" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="data_defect_detection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="data_defect_detection" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="data_defect_detection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="data_defect_detection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Pipenv (data_defect_detection) &gt;" type="70bed36:NamedLibraryElementNode" />
-            </path>
-            <path>
-              <item name="data_defect_detection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Pipenv (data_defect_detection) &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="python3.6" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="data_defect_detection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Pipenv (data_defect_detection) &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="python3.6" type="462c0819:PsiDirectoryNode" />
-              <item name="site-packages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="data_defect_detection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Pipenv (data_defect_detection) &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="python3.6" type="462c0819:PsiDirectoryNode" />
-              <item name="site-packages" type="462c0819:PsiDirectoryNode" />
-              <item name="numpy" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="data_defect_detection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Pipenv (data_defect_detection) &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="python3.6" type="462c0819:PsiDirectoryNode" />
-              <item name="site-packages" type="462c0819:PsiDirectoryNode" />
-              <item name="numpy" type="462c0819:PsiDirectoryNode" />
-              <item name="random" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="data_defect_detection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Pipenv (data_defect_detection) &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="site-packages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="data_defect_detection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Pipenv (data_defect_detection) &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="site-packages" type="462c0819:PsiDirectoryNode" />
-              <item name="numpy" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="data_defect_detection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Pipenv (data_defect_detection) &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="site-packages" type="462c0819:PsiDirectoryNode" />
-              <item name="numpy" type="462c0819:PsiDirectoryNode" />
-              <item name="random" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -350,7 +256,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558462628091" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558534459795" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../midi-controller" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="/usr/bin/node" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -388,7 +294,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.run_all">
+  <component name="RunManager" selected="Python.draw_plot">
     <configuration name="dads.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/data_defect_detection/ui/src/components/Chart/dads.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -454,6 +360,29 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="create_data_set_map" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="draw_plot" type="PythonConfigurationType" factoryName="Python">
+      <module name="data_defect_detection" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="CQLENG_ALLOW_SCHEMA_MANAGEMENT" value="true" />
+      </envs>
+      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="draw_plot" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -573,9 +502,11 @@
       <item itemvalue="Python.server" />
       <item itemvalue="Python.count dataset" />
       <item itemvalue="Python.run_all" />
+      <item itemvalue="Python.draw_plot" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.draw_plot" />
         <item itemvalue="JavaScript Debug.dads.html" />
         <item itemvalue="npm.start" />
       </list>
@@ -611,7 +542,7 @@
       <workItem from="1557761158501" duration="13979000" />
       <workItem from="1557926420226" duration="7839000" />
       <workItem from="1558170188611" duration="9945000" />
-      <workItem from="1558460332062" duration="2295000" />
+      <workItem from="1558460332062" duration="14995000" />
     </task>
     <task id="LOCAL-00001" summary="Fix algorithms, code refactor">
       <created>1557775275443</created>
@@ -624,10 +555,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="217060000" />
+    <option name="totallyTimeSpent" value="229760000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2518" y="27" width="1322" height="1016" extended-state="4" />
+    <frame x="1920" y="27" width="1920" height="1016" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
@@ -636,13 +567,14 @@
       <window_info id="UI Designer" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info active="true" id="SciView" order="6" visible="true" weight="0.3696581" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32951945" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.35125858" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.35125858" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.5549199" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info active="true" anchor="bottom" content_ui="combo" id="Project" order="6" visible="true" weight="0.3638444" />
+      <window_info anchor="bottom" content_ui="combo" id="Project" order="6" weight="0.36270022" />
       <window_info anchor="bottom" id="TODO" order="7" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32951945" />
@@ -660,7 +592,6 @@
       <window_info anchor="right" id="Capture Analysis" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="right" id="Database" order="9" weight="0.32876712" />
-      <window_info anchor="right" id="SciView" order="10" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -671,33 +602,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Fix algorithms, code refactor" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ui/src/types/DatasetRow.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="4" column="9" lean-forward="true" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/create_acronym_map/create_acronym_map.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fixtures/initSQL.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="728">
@@ -926,16 +830,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cli/cli.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="936">
-          <caret line="46" column="9" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ui/src/components/Chart/Chart.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
@@ -959,16 +853,6 @@
           <caret line="17" column="73" selection-start-line="17" selection-start-column="73" selection-end-line="17" selection-end-column="73" />
           <folding>
             <element signature="e#0#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/outlier_detector/dist_kmean.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="8" column="4" selection-start-line="8" selection-end-line="9" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1023,20 +907,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/run_all/run_all.py">
+    <entry file="file://$PROJECT_DIR$/ui/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="52">
-          <caret line="29" column="88" selection-start-line="29" selection-start-column="88" selection-end-line="29" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/routes/outlier_route.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="692">
-          <caret line="56" column="35" lean-forward="true" selection-start-line="56" selection-start-column="35" selection-end-line="56" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
+          <caret line="2" column="12" lean-forward="true" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -1050,10 +924,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ui/.gitignore">
+    <entry file="file://$PROJECT_DIR$/api/routes/outlier_route.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        <state relative-caret-position="692">
+          <caret line="56" column="35" selection-start-line="56" selection-start-column="35" selection-end-line="56" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/outlier_detector/dist_kmean.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="60" column="63" selection-start-line="60" selection-start-column="63" selection-end-line="60" selection-end-column="63" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run_all/TEST_CASES.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="47" selection-start-line="47" selection-end-line="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pipfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cli/cli.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="52" column="12" selection-start-line="52" selection-start-column="12" selection-end-line="52" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run_all/run_all.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="24" column="53" lean-forward="true" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run_all/draw_plot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="21" column="63" lean-forward="true" selection-start-line="21" selection-start-column="63" selection-end-line="21" selection-end-column="63" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
