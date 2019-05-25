@@ -4,7 +4,7 @@ import numpy as np
 from outlier_detector.learn_utils import create_windows
 
 
-def linear_regression(dataset, acceptance=0.5, window_len=22, slide_len=2):
+def linear_regression(dataset, tolerance=0.5, window_len=22, slide_len=2):
     outliers_counter = {}
     labels = {}
     labeled_result = dataset
@@ -16,7 +16,7 @@ def linear_regression(dataset, acceptance=0.5, window_len=22, slide_len=2):
         for index, data_point in enumerate(segment):
             labels[data_point['id']] = segment_num
             condition_value = abs(data_point['value'] / values[index][0])
-            is_outlier = condition_value > (1 + acceptance) or condition_value < (1 - acceptance)
+            is_outlier = condition_value > (1 + tolerance) or condition_value < (1 - tolerance)
 
             if is_outlier:
                 try:

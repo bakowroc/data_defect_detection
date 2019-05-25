@@ -39,20 +39,3 @@ def load_data_from_file(dataset):
             data.append(json.load(json_data))
 
     return data
-
-
-def aggregate_by_feature(data):
-    data_by_feature = {
-        'day': {}, 'weekday': {}, 'monthday': {}, 'none': {}
-    }
-
-    for test_result in data:
-        feature = test_result['OPTIONS']['feature']
-        for method, result in test_result['RESULTS'].items():
-            outliers = len(result)
-            if method not in data_by_feature[feature]:
-                data_by_feature[feature][method] = []
-
-            data_by_feature[feature][method].append(outliers)
-
-    return data_by_feature

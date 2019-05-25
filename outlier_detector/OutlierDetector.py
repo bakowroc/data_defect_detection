@@ -1,4 +1,5 @@
 from datetime import datetime
+import time
 
 from outlier_detector.dist_kmean import dist_kmean
 from outlier_detector.isolation_forest import isl_forest
@@ -33,45 +34,92 @@ class OutlierDetector:
 
         return dataset_with_day
 
-    def knn_mean_sim(self, clusters=30, similarity=10):
+    def knn_mean_sim(self, clusters=30, similarity=5):
+        start = time.time()
         outlier_detect_method = lambda: sim_kmean(clusters, self.dataset_with_day, similarity)
-        return self.run_calculations(outlier_detect_method)
+
+        results = self.run_calculations(outlier_detect_method)
+        duration = time.time() - start
+
+        return results, duration
 
     def knn_mean_dist(self, clusters=30, variant='fixed', distance_ratio=2):
+        start = time.time()
         outlier_detect_method = lambda: dist_kmean(clusters, self.dataset_with_day, variant, distance_ratio)
-        return self.run_calculations(outlier_detect_method)
 
-    def regression_line(self):
-        return linear_regression(self.dataset_with_day)
+        results = self.run_calculations(outlier_detect_method)
+        duration = time.time() - start
+
+        return results, duration
+
+    def regression_line(self, tolerance=0.5):
+        start = time.time()
+
+        results = linear_regression(self.dataset_with_day, tolerance)
+        duration = time.time() - start
+
+        return results, duration
 
     def isolation_forest(self):
+        start = time.time()
         outlier_detect_method = lambda: isl_forest(self.dataset_with_day)
-        return self.run_calculations(outlier_detect_method)
+
+        results = self.run_calculations(outlier_detect_method)
+        duration = time.time() - start
+
+        return results, duration
 
     def rnd_split(self):
-        return random_split(self.dataset_with_day)
+        start = time.time()
 
-    def fusion(self, options):
+        results = random_split(self.dataset_with_day)
+        duration = time.time() - start
+
+        return results, duration
+
+    def fusion(self, options, algorithms='_all_'):
         clusters = options['clusters']
         distance_ratio = options['distance_ratio']
         similarity = options['similarity']
         precision = options['precision']
+        tolerance = options['tolerance']
 
-        knn_sim_result = self.knn_mean_sim(clusters, similarity)
-        knn_dist_f_result = self.knn_mean_dist(clusters, variant='fixed')
-        knn_dist_c_result = self.knn_mean_dist(clusters, variant='calculated', distance_ratio=distance_ratio)
-        regression_line_result = self.regression_line()
+        knn_sim_result = knn_dist_f_result = knn_dist_c_result = regression_line_result = fusion_result = None
+        durations = {
+            'fusion': 0
+        }
 
-        fusion_result = self.get_fusion_result(
-            [knn_sim_result, knn_dist_f_result, knn_dist_c_result, regression_line_result],
-            precision=precision)
+        if 'sim' in algorithms or '_all_' in algorithms:
+            knn_sim_result, duration = self.knn_mean_sim(clusters, similarity)
+            durations['sim'] = duration
+
+        if 'dist_f' in algorithms or '_all_' in algorithms:
+            knn_dist_f_result, duration = self.knn_mean_dist(clusters, variant='fixed')
+            durations['dist_f'] = duration
+
+        if 'dist_c' in algorithms or '_all_' in algorithms:
+            knn_dist_c_result, duration = self.knn_mean_dist(clusters, variant='calculated',
+                                                             distance_ratio=distance_ratio)
+            durations['dist_c'] = duration
+
+        if 'reg' in algorithms or '_all_' in algorithms:
+            regression_line_result, duration = self.regression_line(tolerance=tolerance)
+            durations['reg'] = duration
+
+        if '_all_' in algorithms:
+            fusion_result = self.get_fusion_result(
+                [knn_sim_result, knn_dist_f_result, knn_dist_c_result, regression_line_result],
+                precision=precision)
 
         return {
-            'knn_sim_result': knn_sim_result,
-            'knn_dist_f_result': knn_dist_f_result,
-            'knn_dist_c_result': knn_dist_c_result,
-            'regression_line_result': regression_line_result,
-            'fusion_result': fusion_result
+            'data': {
+                'knn_sim_result': knn_sim_result,
+                'knn_dist_f_result': knn_dist_f_result,
+                'knn_dist_c_result': knn_dist_c_result,
+                'regression_line_result': regression_line_result,
+                'fusion_result': fusion_result,
+            },
+            'durations': durations
         }
 
     @staticmethod
@@ -110,7 +158,6 @@ class OutlierDetector:
 
     @staticmethod
     def get_fusion_result(methods, precision):
-        tolerancy = precision * len(methods)
         outliers = []
 
         for index, method_result in enumerate(methods):
@@ -124,10 +171,11 @@ class OutlierDetector:
         occurrences = dict(count_duplicates(flatten(outliers)))
         final_result = []
         for data_point in methods[0]:
-            if data_point['id'] in occurrences:
-                is_outlier = occurrences[data_point['id']] >= tolerancy
-                data_point['is_outlier'] = is_outlier
+            data_point_cp = data_point.copy()
+            if data_point_cp['id'] in occurrences:
+                is_outlier = occurrences[data_point_cp['id']] >= precision * len(methods)
+                data_point_cp['is_outlier'] = is_outlier
 
-            final_result.append(data_point)
+            final_result.append(data_point_cp)
 
         return final_result

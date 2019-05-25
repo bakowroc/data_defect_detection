@@ -1,19 +1,77 @@
-import json
-import os
-
 import time_uuid
 
 from db.models.DataPoint import DataPoint
 from db.models.DataSetMap import DataSetMap
 from outlier_detector.OutlierDetector import OutlierDetector
-from run_all.TEST_CASES import TEST_CASES
+from run_all.TestCase import TestCase
+from run_all.TestComparator import TestComparator
 
 TEST_DATASETS = [
-    {
-        'operator_id': 53,
-        'acronym': 'MOGILA',
-        'kpi_name': 'LTE_1079'
-    }
+    [53, 'MOGILA', 'LTE_1079'],
+    [53, 'NOGALES', 'MGW_1123'],
+    [53, 'NOGALES', 'MGW_2069'],
+    [53, 'NOGALES', 'MSC_2250'],
+    [53, 'NOGALES', 'MSC_601'],
+    [53, 'OCNITA', 'RNC_1883'],
+    [53, 'OCNITA', 'RNC_5070'],
+    [53, 'OCNITA', 'RNC_615'],
+    [534, 'AGUA_PRIETA', 'LTE_1079'],
+    [534, 'AGUA_PRIETA', 'LTE_5060'],
+    [534, 'AGUA_PRIETA', 'LTE_1079'],
+    [534, 'AGUA_PRIETA', 'LTE_5137'],
+    [534, 'AGUA_PRIETA', 'LTE_7013'],
+    [998, 'DARHAN', 'SGSN_525'],
+    [998, 'DARHAN', 'SGSN_544'],
+    [998, 'DARHAN', 'SGSN_776'],
+    [160, 'MOTUL', 'RNC_19'],
+    [160, 'MOTUL', 'RNC_6464'],
+    [160, 'MOTUL', 'RNC_1883'],
+    [283, 'VILANI', 'RNC_1883'],
+    [283, 'VILANI', 'RNC_5081'],
+    [283, 'VILANI', 'RNC_5464'],
+    [283, 'ORIZBA', 'LTE_5003'],
+    [283, 'ORIZBA', 'LTE_5058'],
+    [283, 'ORIZBA', 'LTE_5191'],
+    [283, 'ORIZBA', 'LTE_5432'],
+    [899, 'OYTAL', 'RNC_165'],
+    [899, 'OYTAL', 'RNC_5464'],
+    [1162, 'SIBU', 'RNC_165'],
+    [1162, 'SIBU', 'RNC_1906'],
+    [1162, 'SIBU', 'RNC_5082'],
+]
+
+TEST_COMPARATORS = [
+    TestComparator('feature', [
+        TestCase({'feature': 'none'}),
+        TestCase({'feature': 'day'}),
+        TestCase({'feature': 'weekday'}),
+        TestCase({'feature': 'monthday'})
+    ]),
+    TestComparator('precision', [
+        TestCase({'feature': 'day', 'precision': 0.5}),
+        TestCase({'feature': 'day', 'precision': 0.75}),
+        TestCase({'feature': 'day', 'precision': 1}),
+    ]),
+    TestComparator('clusters', [
+        TestCase({'feature': 'day', 'clusters': 15}),
+        TestCase({'feature': 'day', 'clusters': 30}),
+        TestCase({'feature': 'day', 'clusters': 45}),
+    ], ['sim', 'dist_c', 'dist_f']),
+    TestComparator('distance_ratio', [
+        TestCase({'feature': 'day', 'distance_ratio': 2}),
+        TestCase({'feature': 'day', 'distance_ratio': 4}),
+        TestCase({'feature': 'day', 'distance_ratio': 6}),
+    ], ['dist_c']),
+    TestComparator('similarity', [
+        TestCase({'feature': 'day', 'similarity': 3}),
+        TestCase({'feature': 'day', 'similarity': 5}),
+        TestCase({'feature': 'day', 'similarity': 7}),
+    ], ['sim']),
+    TestComparator('tolerance', [
+        TestCase({'feature': 'day', 'tolerance': 0.25}),
+        TestCase({'feature': 'day', 'tolerance': 0.5}),
+        TestCase({'feature': 'day', 'tolerance': 0.75}),
+    ], ['reg']),
 ]
 
 
@@ -22,49 +80,23 @@ def run_all():
     if len(DataSetMap.objects.limit(1)) is 0:
         raise ResourceWarning("collection data_set_map is empty")
 
-    features = ['day', 'weekday', 'monthday', 'none']
-
     for dataset in TEST_DATASETS:
-        for feature in features:
-            operator_id = dataset['operator_id']
-            acronym = dataset['acronym']
-            kpi_name = dataset['kpi_name']
+        operator_id = dataset[0]
+        acronym = dataset[1]
+        kpi_name = dataset[2]
 
-            data_points = DataPoint.objects.filter(operator_id=operator_id, acronym=acronym, kpi_name=kpi_name)
-            detector = OutlierDetector(dataset=parse_result(data_points), feature=feature)
+        data_points = DataPoint.objects.filter(operator_id=operator_id, acronym=acronym, kpi_name=kpi_name)
+        for comparator in TEST_COMPARATORS:
+            comparator.save_dataset(dataset)
 
-            for test in TEST_CASES:
-                options = test['OPTIONS']
-                result_dict = detector.fusion(options)
-                write_test_result(test, result_dict, dataset, feature)
+            for test in comparator.get_test_cases():
+                configuration = test.get_configuration()
+                detector = OutlierDetector(dataset=parse_result(data_points), feature=configuration['feature'])
 
+                result_dict = detector.fusion(configuration, algorithms=comparator.get_algorithms())
+                test.append_results(result_dict)
 
-def write_test_result(test, result_dict, dataset, feature):
-    json_data = test
-    json_data['OPTIONS']['feature'] = feature
-    operator_id = dataset['operator_id']
-    acronym = dataset['acronym']
-    kpi_name = dataset['kpi_name']
-
-    json_data['META'] = {
-        'operator_id': operator_id,
-        'acronym': acronym,
-        'kpi_name': kpi_name,
-    }
-
-    json_data['RESULTS'] = {}
-    for k, v in result_dict.items():
-        outliers = list(map(lambda dp: [dp['value'], dp['timestamp']] if dp['is_outlier'] else None, v))
-        json_data['RESULTS'][k] = list(filter(lambda o: o is not None, outliers))
-
-    dir_name = './tests_results/{}-{}-{}'.format(operator_id, acronym, kpi_name)
-    print(dir_name)
-    if not os.path.exists(dir_name):
-        os.makedirs(dir_name)
-
-    file_name = '{}/{}-{}.json'.format(dir_name, feature, test['ID'])
-    with open(file_name, 'w+') as outfile:
-        json.dump(json_data, outfile)
+            comparator.generate_csv()
 
 
 def parse_result(data_set):
