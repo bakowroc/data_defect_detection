@@ -1,3 +1,6 @@
+from run_all.PlotDrawer import PlotDrawer
+
+
 class TestComparator:
     def __init__(self, parameter, cases, algorithms=['_all_']):
         self._parameter = parameter
@@ -15,9 +18,11 @@ class TestComparator:
     def get_algorithms(self):
         return self._algorithms
 
+    def get_parameter(self):
+        return self._parameter
+
     def generate_data_summary(self):
         results_key = []
-        durations = []
         for key, value in self._cases[0].get_results().items():
             if value['results'] is not None:
                 results_key.append(key)
@@ -31,11 +36,9 @@ class TestComparator:
             for key, value in test.get_results().items():
                 if value['results'] is not None:
                     row_data.append(value['results'])
-                    durations.append(round(test.get_durations()[key], 2))
 
             data.append(row_data)
 
-        data.insert(0,  ['-', '-', *durations[:len(results_key)]])
         return data
 
     def generate_csv(self):
@@ -51,6 +54,3 @@ class TestComparator:
         with open("./TESTS/" + filename, 'w+') as file:
             for row in data:
                 file.write(','.join(str(e) for e in row) + '\n')
-
-    def draw_plot(self):
-        pass
