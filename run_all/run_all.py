@@ -41,6 +41,12 @@ TEST_DATASETS = [
     [1162, 'SIBU', 'RNC_5082'],
 ]
 
+IF_COMPARATOR = [
+    TestComparator('feature', [
+        TestCase()
+    ], ['if'])
+]
+
 TEST_COMPARATORS = [
     TestComparator('feature', [
         TestCase({'feature': 'none'}),
@@ -99,7 +105,7 @@ def run_all(with_calculations=True):
             kpi_name = dataset[2]
 
             data_points = DataPoint.objects.filter(operator_id=operator_id, acronym=acronym, kpi_name=kpi_name)
-            for comparator in TEST_COMPARATORS:
+            for comparator in IF_COMPARATOR:
                 comparator.save_dataset(dataset)
 
                 for test in comparator.get_test_cases():
@@ -115,7 +121,7 @@ def run_all(with_calculations=True):
 
 
 def draw_plots():
-    for comparator in TEST_COMPARATORS:
+    for comparator in IF_COMPARATOR:
         drawer = PlotDrawer('avg', comparator.get_parameter())
         drawer.draw()
 

@@ -84,7 +84,7 @@ class OutlierDetector:
         precision = options['precision']
         tolerance = options['tolerance']
 
-        knn_sim_result = knn_dist_f_result = knn_dist_c_result = regression_line_result = fusion_result = None
+        knn_sim_result = knn_dist_f_result = knn_dist_c_result = regression_line_result = fusion_result = if_results = None
         durations = {
             'fusion': 0
         }
@@ -106,6 +106,10 @@ class OutlierDetector:
             regression_line_result, duration = self.regression_line(tolerance=tolerance)
             durations['reg'] = duration
 
+        if 'if' in algorithms:
+            if_results, duration = self.isolation_forest()
+            durations['if'] = duration
+
         if '_all_' in algorithms:
             fusion_result = self.get_fusion_result(
                 [knn_sim_result, knn_dist_f_result, knn_dist_c_result, regression_line_result],
@@ -117,6 +121,7 @@ class OutlierDetector:
                 'knn_dist_f_result': knn_dist_f_result,
                 'knn_dist_c_result': knn_dist_c_result,
                 'regression_line_result': regression_line_result,
+                'if_results': if_results,
                 'fusion_result': fusion_result,
             },
             'durations': durations

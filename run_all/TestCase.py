@@ -11,7 +11,7 @@ OPTIMAL_CONFIGURATION = {
 
 
 class TestCase:
-    def __init__(self, configuration):
+    def __init__(self, configuration = {}):
         self.id = datetime.datetime.now().time()
         self._configuration = {**OPTIMAL_CONFIGURATION, **configuration}
         self._durations = None
@@ -31,6 +31,10 @@ class TestCase:
 
         self._results['reg'] = {
             'tolerance': self._configuration['tolerance'],
+            'results': 0
+        }
+
+        self._results['if'] = {
             'results': 0
         }
 
@@ -61,6 +65,7 @@ class TestCase:
         self._results['dist_f']['results'] = outliers['knn_dist_f_result']
         self._results['sim']['results'] = outliers['knn_sim_result']
         self._results['reg']['results'] = outliers['regression_line_result']
+        self._results['if']['results'] = outliers['if_results']
         self._results['fusion']['results'] = outliers['fusion_result']
 
     def get_results(self):

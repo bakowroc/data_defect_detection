@@ -19,8 +19,8 @@ class PlotDrawer:
         for method, outliers in results['data'].items():
             ax.plot(keys, outliers, marker='o')
 
-        ax.set(ylabel='Number of outliers', xlabel=self._parameter,
-               title='Result of changing {} parameter'.format(self._parameter))
+        ax.set(ylabel='Liczba punktów odstających', xlabel=self._parameter,
+               title='Wyniki dla zmiany parametru {}'.format(self._parameter))
         ax.grid()
         ax.legend(results['data'].keys())
 
@@ -63,7 +63,7 @@ class PlotDrawer:
 
         avg_results = {}
         for key, values in combined_values.items():
-            avg_results[key] = [math.floor((sum(x) / len(values))) for x in zip(*PlotDrawer.to_ints(values))]
+            avg_results[key] = [round(sum(x) / len(values), 2) for x in zip(*PlotDrawer.to_ints(values))]
 
         return PlotDrawer.prepare_transposed_data(self._reports['headers'][2:], avg_results)
 
